@@ -13,11 +13,13 @@ var hour_rect_size_factor: int = 0
 var player_shooots: int
 var player_node
 var player_life: int
+var player_resource: int
 var player_position: Vector2 = Vector2(385, 540)
 var can_spawn_enemies: bool = false
 
 
 func _ready():
+	player_resource = 0
 	player_life = 5
 	player_shooots = 5
 
@@ -48,9 +50,9 @@ func _on_invasion_timer_timeout():
 
 func spawn_enemy() -> void:
 	if can_spawn_enemies == true and get_tree().get_nodes_in_group("enemy").size() < 2:
-			for spawn: Marker2D in outdoor_scene_node.get_node("enemy_spawner").get_children():
+			for spawner in outdoor_scene_node.get_node("enemy_spawner").get_children():
 				var enemy = ENEMY_SCENE.instantiate()
-				enemy.global_position = spawn.global_position
+				enemy.global_position = spawner.global_position
 				outdoor_scene_node.get_node("enemy_group").add_child(enemy)
 				enemy.add_to_group("enemy")
 

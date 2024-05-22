@@ -1,9 +1,3 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://c07wpxevc7kyv"]
-
-[ext_resource type="Texture2D" uid="uid://bl4ff0yvt6ebw" path="res://assets/button.png" id="1_jxlew"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fxdch"]
-texture = ExtResource("1_jxlew")
+[gd_resource type="Theme" format=3 uid="uid://c07wpxevc7kyv"]
 
 [resource]
-Button/styles/normal = SubResource("StyleBoxTexture_fxdch")
