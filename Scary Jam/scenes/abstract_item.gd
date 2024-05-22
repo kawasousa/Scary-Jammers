@@ -7,5 +7,5 @@ func _ready():
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("Player"):
-		Global.player_resource += 1
+		Global.player_shoot_resource += 1
 		queue_free()

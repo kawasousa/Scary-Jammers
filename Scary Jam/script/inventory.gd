@@ -3,8 +3,8 @@ extends Control
 @onready var button = $HBoxContainer/Button
 
 func _on_button_pressed():
-	if Global.player_resource > 0:
-			Global.player_resource -= 1
+	if Global.player_shoot_resource > 0:
+			Global.player_shoot_resource -= 1
 			Global.player_shooots += 1
 
 func _on_area_2d_body_entered(body):

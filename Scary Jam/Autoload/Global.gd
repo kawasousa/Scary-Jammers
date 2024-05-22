@@ -13,15 +13,17 @@ var hour_rect_size_factor: int = 0
 var player_shooots: int
 var player_node
 var player_life: int
-var player_resource: int
+var player_shoot_resource: int
+var player_life_resource: int
 var player_position: Vector2 = Vector2(385, 540)
 var can_spawn_enemies: bool = false
 
 
 func _ready():
-	player_resource = 0
+	player_shoot_resource = 0
+	player_life_resource = 0
 	player_life = 5
-	player_shooots = 5
+	player_shooots = 0
 
 func _process(_delta):
 	get_bullet()

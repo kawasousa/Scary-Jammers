@@ -21,9 +21,13 @@ size_flags_vertical = 0
 mouse_filter = 2
 theme_override_constants/separation = 100
 
-[node name="recurso" type="Label" parent="MarginContainer/HBoxContainer"]
+[node name="recurso_shoot" type="Label" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
-text = "Recurso: 0"
+text = "Recurso -> Bala: 0"
+
+[node name="recurso_life" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "Recurso -> Vida: 0"
 
 [node name="bullets_label" type="Label" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
