@@ -111,5 +111,7 @@ position = Vector2(253, 713)
 
 [node name="shoot_group" type="Node2D" parent="."]
 
+[node name="resources" type="Node2D" parent="."]
+
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
 [connection signal="body_entered" from="passage_area2" to="." method="_on_passage_area_2_body_entered"]

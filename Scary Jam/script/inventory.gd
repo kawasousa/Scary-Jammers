@@ -16,3 +16,8 @@ func _on_quit_pressed():
 	Global.player_node.can_move = true
 	for button in get_node("HBoxContainer").get_children():
 		button.release_focus()
+
+func _on_life_pressed():
+	if Global.player_life_resource > 0:
+		Global.player_life_resource -= 1
+		Global.player_life += 1
