@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 const SPEED = 30000
 const SHOOT_SCENE = preload("res://scenes/shoot_scene.tscn")
+var can_move = true
 
 
 func _ready():
@@ -9,7 +10,10 @@ func _ready():
 	global_position = Global.player_position
 
 func _physics_process(delta):
-	movement(delta)
+	if can_move:
+		movement(delta)
+	else:
+		velocity = Vector2(0,0)
 	shoot()
 	move_and_slide()
 

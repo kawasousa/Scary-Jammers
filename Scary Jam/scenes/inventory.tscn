@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cuwvdickdojxe"]
+[gd_scene load_steps=4 format=3 uid="uid://cuwvdickdojxe"]
 
 [ext_resource type="Theme" uid="uid://c07wpxevc7kyv" path="res://themes/button.tres" id="1_mp32s"]
+[ext_resource type="Script" path="res://script/inventory.gd" id="1_y52ir"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i8dxd"]
+size = Vector2(186, 78)
 
 [node name="inventory" type="Control"]
 layout_mode = 3
@@ -11,6 +15,13 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_y52ir")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(81, 36)
+shape = SubResource("RectangleShape2D_i8dxd")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
@@ -25,10 +36,10 @@ theme = ExtResource("1_mp32s")
 
 [node name="Label" type="Label" parent="HBoxContainer/Button"]
 layout_mode = 0
-offset_left = -3.0
+offset_left = -5.0
 offset_top = -23.0
-offset_right = 43.0
-text = "Botão"
+offset_right = 46.0
+text = "+Balas"
 
 [node name="Button2" type="Button" parent="HBoxContainer"]
 custom_minimum_size = Vector2(40, 0)
@@ -41,13 +52,17 @@ offset_top = -23.0
 offset_right = 43.0
 text = "Botão"
 
-[node name="Button3" type="Button" parent="HBoxContainer"]
+[node name="quit" type="Button" parent="HBoxContainer"]
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 theme = ExtResource("1_mp32s")
 
-[node name="Label" type="Label" parent="HBoxContainer/Button3"]
+[node name="quit" type="Label" parent="HBoxContainer/quit"]
 offset_left = -3.0
 offset_top = -23.0
-offset_right = 43.0
-text = "Botão"
+offset_right = 44.0
+text = "Voltar"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/quit" to="." method="_on_quit_pressed"]

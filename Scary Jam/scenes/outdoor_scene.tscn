@@ -26,28 +26,33 @@ player_position = Vector2(160, 40)
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0.109804, 0.160784, 0.117647, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="placeholder_outdoor"]
 offset_right = 1152.0
 offset_bottom = 168.0
 color = Color(0.360784, 0.192157, 0.164706, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect2" type="ColorRect" parent="placeholder_outdoor"]
 offset_right = 96.0
 offset_bottom = 408.0
 color = Color(0.360784, 0.192157, 0.164706, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect3" type="ColorRect" parent="placeholder_outdoor"]
 offset_left = 576.0
 offset_right = 1152.0
 offset_bottom = 216.0
 color = Color(0.360784, 0.192157, 0.164706, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect4" type="ColorRect" parent="placeholder_outdoor"]
 offset_top = 592.0
 offset_right = 200.0
 offset_bottom = 648.0
 color = Color(0.172549, 0.45098, 0.282353, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect7" type="ColorRect" parent="placeholder_outdoor"]
 offset_left = 304.0
@@ -55,6 +60,7 @@ offset_top = 576.0
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0.172549, 0.45098, 0.282353, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect6" type="ColorRect" parent="placeholder_outdoor"]
 offset_left = 1056.0
@@ -62,12 +68,14 @@ offset_top = 320.0
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0.172549, 0.45098, 0.282353, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect5" type="ColorRect" parent="placeholder_outdoor"]
-offset_top = 476.0
+offset_top = 407.0
 offset_right = 40.0
 offset_bottom = 648.0
 color = Color(0.172549, 0.45098, 0.282353, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="forja" type="ColorRect" parent="placeholder_outdoor"]
 offset_left = 144.0
@@ -75,6 +83,7 @@ offset_top = 168.0
 offset_right = 368.0
 offset_bottom = 312.0
 color = Color(0, 0.760784, 0.764706, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." instance=ExtResource("1_r2x21")]
 position = Vector2(255, 575)
@@ -93,10 +102,10 @@ visible = false
 [node name="enemy_spawner" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="enemy_spawner"]
-position = Vector2(1141, 264)
+position = Vector2(1202, 267)
 
 [node name="Marker2D2" type="Marker2D" parent="enemy_spawner"]
-position = Vector2(3, 444)
+position = Vector2(253, 713)
 
 [node name="enemy_group" type="Node2D" parent="."]
 
