@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8wx6syjn4obb"]
+
+[ext_resource type="Script" path="res://scenes/abstract_item.gd" id="1_tnpne"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_aasck"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_drrr3"]
+size = Vector2(0.5, 0.5)
+
+[node name="Abbstract_item" type="Sprite2D"]
+texture = SubResource("PlaceholderTexture2D_aasck")
+script = ExtResource("1_tnpne")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1.19209e-07, 0)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_drrr3")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]

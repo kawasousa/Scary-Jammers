@@ -1,0 +1,105 @@
+[gd_scene load_steps=7 format=3 uid="uid://catx0bv1g6iai"]
+
+[ext_resource type="Script" path="res://script/outdoor_scene.gd" id="1_dmdnm"]
+[ext_resource type="PackedScene" uid="uid://cmkyt4hcorr3y" path="res://scenes/player.tscn" id="1_r2x21"]
+[ext_resource type="PackedScene" uid="uid://dy5vyatq360dc" path="res://scenes/pause_menu.tscn" id="3_o8oqm"]
+[ext_resource type="PackedScene" uid="uid://dntwuhklfyvp2" path="res://scenes/passage_area.tscn" id="3_x1hyl"]
+[ext_resource type="PackedScene" uid="uid://buwo4i7mxxfv3" path="res://scenes/hud.tscn" id="4_vod8v"]
+[ext_resource type="PackedScene" uid="uid://btm5fg74xn1qh" path="res://scenes/game_over_screen.tscn" id="5_8pj85"]
+
+[node name="outdoor_scene" type="Node2D"]
+script = ExtResource("1_dmdnm")
+
+[node name="passage_area" parent="." instance=ExtResource("3_x1hyl")]
+position = Vector2(247, 300)
+target_area = "res://scenes/house_scene.tscn"
+player_position = Vector2(385, 540)
+
+[node name="passage_area2" parent="." instance=ExtResource("3_x1hyl")]
+position = Vector2(253, 650)
+target_area = "res://scenes/florest_scene.tscn"
+player_position = Vector2(160, 40)
+
+[node name="placeholder_outdoor" type="Node2D" parent="."]
+
+[node name="ground" type="ColorRect" parent="placeholder_outdoor"]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.109804, 0.160784, 0.117647, 1)
+
+[node name="ColorRect" type="ColorRect" parent="placeholder_outdoor"]
+offset_right = 1152.0
+offset_bottom = 168.0
+color = Color(0.360784, 0.192157, 0.164706, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="placeholder_outdoor"]
+offset_right = 96.0
+offset_bottom = 408.0
+color = Color(0.360784, 0.192157, 0.164706, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="placeholder_outdoor"]
+offset_left = 576.0
+offset_right = 1152.0
+offset_bottom = 216.0
+color = Color(0.360784, 0.192157, 0.164706, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="placeholder_outdoor"]
+offset_top = 592.0
+offset_right = 200.0
+offset_bottom = 648.0
+color = Color(0.172549, 0.45098, 0.282353, 1)
+
+[node name="ColorRect7" type="ColorRect" parent="placeholder_outdoor"]
+offset_left = 304.0
+offset_top = 576.0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.172549, 0.45098, 0.282353, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="placeholder_outdoor"]
+offset_left = 1056.0
+offset_top = 320.0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.172549, 0.45098, 0.282353, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="placeholder_outdoor"]
+offset_top = 476.0
+offset_right = 40.0
+offset_bottom = 648.0
+color = Color(0.172549, 0.45098, 0.282353, 1)
+
+[node name="forja" type="ColorRect" parent="placeholder_outdoor"]
+offset_left = 144.0
+offset_top = 168.0
+offset_right = 368.0
+offset_bottom = 312.0
+color = Color(0, 0.760784, 0.764706, 1)
+
+[node name="Player" parent="." instance=ExtResource("1_r2x21")]
+position = Vector2(255, 600)
+scale = Vector2(0.5, 0.5)
+
+[node name="Canvas" type="Node" parent="."]
+
+[node name="pause_menu" parent="Canvas" instance=ExtResource("3_o8oqm")]
+visible = false
+
+[node name="HUD" parent="Canvas" instance=ExtResource("4_vod8v")]
+
+[node name="game_over_screen" parent="Canvas" instance=ExtResource("5_8pj85")]
+visible = false
+
+[node name="enemy_spawner" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="enemy_spawner"]
+position = Vector2(1141, 264)
+
+[node name="Marker2D2" type="Marker2D" parent="enemy_spawner"]
+position = Vector2(3, 444)
+
+[node name="enemy_group" type="Node2D" parent="."]
+
+[node name="shoot_group" type="Node2D" parent="."]
+
+[connection signal="body_entered" from="passage_area2" to="." method="_on_passage_area_2_body_entered"]

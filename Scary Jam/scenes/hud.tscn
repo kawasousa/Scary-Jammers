@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://buwo4i7mxxfv3"]
+
+[ext_resource type="Script" path="res://script/hud.gd" id="1_fmoib"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_fmoib")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 2
+theme_override_constants/separation = 100
+
+[node name="bullets_label" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Balas: 0"
+
+[node name="player_life" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "Saúde: 0"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Invasão em:"
+
+[node name="hour_rect" type="ColorRect" parent="MarginContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+color = Color(0, 0.847059, 0.85098, 1)

@@ -1,0 +1,12 @@
+{
+	"0" : {
+		"texture" : "stick.png"
+	},
+	"1" : {
+		"texture" : "carinha.png"
+	},
+	"2": {
+		"texture": "tree.png"
+	}
+}
+

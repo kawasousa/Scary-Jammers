@@ -1,0 +1,97 @@
+[gd_scene load_steps=6 format=3 uid="uid://bnd83ilfgkupl"]
+
+[ext_resource type="Script" path="res://script/florest_scene.gd" id="1_bq1m7"]
+[ext_resource type="PackedScene" uid="uid://cmkyt4hcorr3y" path="res://scenes/player.tscn" id="1_hkoe8"]
+[ext_resource type="PackedScene" uid="uid://dntwuhklfyvp2" path="res://scenes/passage_area.tscn" id="2_1ddcw"]
+[ext_resource type="PackedScene" uid="uid://buwo4i7mxxfv3" path="res://scenes/hud.tscn" id="3_e0pml"]
+[ext_resource type="PackedScene" uid="uid://dy5vyatq360dc" path="res://scenes/pause_menu.tscn" id="4_ema30"]
+
+[node name="florest" type="Node2D"]
+script = ExtResource("1_bq1m7")
+
+[node name="passage_area" parent="." instance=ExtResource("2_1ddcw")]
+position = Vector2(160, -8)
+scale = Vector2(3, 3)
+target_area = "res://scenes/outdoor_scene.tscn"
+player_position = Vector2(255, 600)
+
+[node name="placeholder_outdoor" type="Node2D" parent="."]
+
+[node name="ground" type="ColorRect" parent="placeholder_outdoor"]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.109804, 0.160784, 0.117647, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="placeholder_outdoor"]
+offset_top = 592.0
+offset_right = 1136.0
+offset_bottom = 648.0
+color = Color(0.172549, 0.45098, 0.282353, 1)
+
+[node name="ColorRect7" type="ColorRect" parent="placeholder_outdoor"]
+offset_left = 304.0
+offset_top = -4.0
+offset_right = 1152.0
+offset_bottom = 72.0
+color = Color(0.172549, 0.45098, 0.282353, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="placeholder_outdoor"]
+offset_left = 1080.0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.172549, 0.45098, 0.282353, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="placeholder_outdoor"]
+offset_right = 40.0
+offset_bottom = 648.0
+color = Color(0.172549, 0.45098, 0.282353, 1)
+
+[node name="Player" parent="." instance=ExtResource("1_hkoe8")]
+position = Vector2(160, 40)
+
+[node name="canvas" type="Node2D" parent="."]
+
+[node name="HUD" parent="canvas" instance=ExtResource("3_e0pml")]
+
+[node name="pause_menu" parent="canvas" instance=ExtResource("4_ema30")]
+visible = false
+
+[node name="tree_spawn_markers" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="tree_spawn_markers"]
+position = Vector2(968, 128)
+
+[node name="Marker2D2" type="Marker2D" parent="tree_spawn_markers"]
+position = Vector2(968, 264)
+
+[node name="Marker2D3" type="Marker2D" parent="tree_spawn_markers"]
+position = Vector2(960, 448)
+
+[node name="Marker2D4" type="Marker2D" parent="tree_spawn_markers"]
+position = Vector2(768, 448)
+
+[node name="Marker2D5" type="Marker2D" parent="tree_spawn_markers"]
+position = Vector2(576, 448)
+
+[node name="Marker2D6" type="Marker2D" parent="tree_spawn_markers"]
+position = Vector2(440, 448)
+
+[node name="Marker2D7" type="Marker2D" parent="tree_spawn_markers"]
+position = Vector2(576, 320)
+
+[node name="Marker2D8" type="Marker2D" parent="tree_spawn_markers"]
+position = Vector2(760, 312)
+
+[node name="Marker2D9" type="Marker2D" parent="tree_spawn_markers"]
+position = Vector2(768, 192)
+
+[node name="Marker2D10" type="Marker2D" parent="tree_spawn_markers"]
+position = Vector2(576, 128)
+
+[node name="Marker2D11" type="Marker2D" parent="tree_spawn_markers"]
+position = Vector2(264, 504)
+
+[node name="Marker2D12" type="Marker2D" parent="tree_spawn_markers"]
+position = Vector2(128, 440)
+
+[node name="tree_group" type="Node2D" parent="."]
