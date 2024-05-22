@@ -19,8 +19,10 @@ func movement(delta) -> void:
 	velocity = direction * SPEED * delta
 
 func shoot() -> void:
-	if Input.is_action_just_pressed("shoot") and get_parent().name == "outdoor_scene":
+	if Input.is_action_just_pressed("shoot") and get_parent().name == "outdoor_scene" and Global.player_shooots > 0:
 		var shoot_instance = SHOOT_SCENE.instantiate()
 		get_parent().get_node("shoot_group").add_child(shoot_instance)
 		shoot_instance.global_position = global_position
+		shoot_instance.look_at(get_global_mouse_position())
 		shoot_instance.add_to_group("shoots")
+		Global.player_shooots -= 1

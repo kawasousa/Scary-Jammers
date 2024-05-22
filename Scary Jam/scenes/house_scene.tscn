@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ckoxx85jctqna"]
+[gd_scene load_steps=8 format=3 uid="uid://ckoxx85jctqna"]
 
 [ext_resource type="Script" path="res://script/house.gd" id="1_781us"]
 [ext_resource type="PackedScene" uid="uid://dy5vyatq360dc" path="res://scenes/pause_menu.tscn" id="1_viooo"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cmkyt4hcorr3y" path="res://scenes/player.tscn" id="2_cnpi6"]
 [ext_resource type="PackedScene" uid="uid://dntwuhklfyvp2" path="res://scenes/passage_area.tscn" id="2_nqlps"]
 [ext_resource type="PackedScene" uid="uid://btm5fg74xn1qh" path="res://scenes/game_over_screen.tscn" id="6_s5mbg"]
+[ext_resource type="PackedScene" uid="uid://cuwvdickdojxe" path="res://scenes/inventory.tscn" id="7_rk743"]
 
 [node name="house" type="Node2D"]
 script = ExtResource("1_781us")
@@ -121,5 +122,12 @@ visible = false
 
 [node name="game_over_screen" parent="Canvas" instance=ExtResource("6_s5mbg")]
 visible = false
+message = "Os Jammer invadiram a casa"
+
+[node name="inventory" parent="." instance=ExtResource("7_rk743")]
+offset_left = 516.0
+offset_top = 226.0
+offset_right = 516.0
+offset_bottom = 226.0
 
 [connection signal="body_entered" from="passage_area" to="." method="_on_passage_area_body_entered"]

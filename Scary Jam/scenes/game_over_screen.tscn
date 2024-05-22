@@ -19,7 +19,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer/Label:self_modulate")
+tracks/1/path = NodePath("AnimationPlayer/game_over_message:self_modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -60,7 +60,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer/Label:self_modulate")
+tracks/1/path = NodePath("AnimationPlayer/game_over_message:self_modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -102,7 +102,7 @@ offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0.0352941, 0.0352941, 0.0352941, 0)
 
-[node name="Label" type="Label" parent="AnimationPlayer"]
+[node name="game_over_message" type="Label" parent="AnimationPlayer"]
 self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 8
 anchor_left = 0.5
@@ -115,7 +115,6 @@ offset_right = 0.5
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "Eles invadiram a casa!"
 horizontal_alignment = 1
 
 [node name="restart_button" type="Button" parent="AnimationPlayer"]
