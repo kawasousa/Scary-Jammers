@@ -204,4 +204,3 @@ message = "Os Jammer invadiram a casa"
 
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
 [connection signal="body_entered" from="passage_area" to="." method="_on_passage_area_body_entered"]
-[connection signal="tree_exited" from="inventory" to="." method="_on_inventory_tree_exited"]

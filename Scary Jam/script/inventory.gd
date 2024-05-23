@@ -1,17 +1,22 @@
 extends Control
 
-@onready var plus_life = $HBoxContainer/plus_life
+@onready var plus_life = $Area2D/VBoxContainer/HBoxContainer/plus_life
+@onready var quit_menu = $Area2D/VBoxContainer/quit_menu
+@onready var area_2d = $Area2D
 
 
-func _on_area_2d_body_entered(body):
-	if body.is_in_group("Player"):
-		Global.player_node.can_move = false
-		plus_life.grab_focus()
+func _ready():
+	visible = false
+
+func _process(delta):
+	open_inventory()
 
 func _on_quit_menu_pressed():
 	Global.player_node.can_move = true
-	for button in get_node("HBoxContainer").get_children():
+	for button in get_node("Area2D/VBoxContainer/HBoxContainer").get_children():
 		button.release_focus()
+		quit_menu.release_focus()
+		visible = false
 
 func _on_plus_life_pressed():
 	if Global.player_life_resource > 0 and Global.player_life < 5:
@@ -23,3 +28,10 @@ func _on_plus_shoot_pressed():
 			Global.player_shoot_resource -= 1
 			Global.player_shooots += 1
 			Global.can_spawn_trees = true
+
+func open_inventory() -> void:
+	if  Input.is_action_just_pressed("open_inventory"):
+		if area_2d.overlaps_body(Global.player_node):
+			Global.player_node.can_move = false
+			visible = true
+			plus_life.grab_focus()

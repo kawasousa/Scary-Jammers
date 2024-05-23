@@ -39,7 +39,7 @@ color = Color(0, 0.847059, 0.85098, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="invasion_alert_polygon" type="Polygon2D" parent="invasion"]
-position = Vector2(93, 0)
+position = Vector2(93, -4)
 color = Color(0, 0.847059, 0.85098, 1)
 polygon = PackedVector2Array(297, 3, 297, 23, 301, 23, 301, 19, 297, 19, 297, 18, 301, 18, 301, 3)
 
