@@ -19,6 +19,8 @@ var player_life_resource: int
 var can_spawn_enemies: bool = false
 var can_spawn_trees: bool = true
 
+################################################################################
+
 
 func _ready():
 	player_shoot_resource = 0
@@ -31,16 +33,16 @@ func _process(_delta):
 	get_bullet()
 	check_player_life()
 
-## Obtém a satisfação e limita ela a no mínimo 0 e no máximo 100
+## Obtém as balas e limita ela a no mínimo 0 e no máximo 100
 func get_bullet() -> int:
 	player_shooots = min(player_shooots, 100)
 	player_shooots = max(player_shooots, 0)
 	return player_shooots
 
-## Atualiza a satisfação com base no sinal que é recebido
-## A função recebe um valor e incrementa ou decrementa esse valor na satisfação
+
 func update_bullets(update_factor) -> int:
-	## O input será substituido pelo sinal mandado pela receita
+	## Atualiza as balas com base no sinal que é recebido
+	## A função recebe um valor e incrementa esse valor na quantidade de balas
 	player_shooots += update_factor
 	return player_shooots
 
@@ -67,6 +69,7 @@ func increase_player_life() -> void:
 	player_life += 1
 
 func check_player_life() -> void:
+	## checando vida do player e transformando a condição de game over em verdadeira
 	if player_life == 0:
 		game_over = true
 	player_life = min(player_life, 5)
