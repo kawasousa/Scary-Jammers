@@ -1,13 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://bnd83ilfgkupl"]
+[gd_scene load_steps=7 format=3 uid="uid://bnd83ilfgkupl"]
 
 [ext_resource type="Script" path="res://script/florest_scene.gd" id="1_bq1m7"]
 [ext_resource type="PackedScene" uid="uid://cmkyt4hcorr3y" path="res://scenes/player.tscn" id="1_hkoe8"]
 [ext_resource type="PackedScene" uid="uid://dntwuhklfyvp2" path="res://scenes/passage_area.tscn" id="2_1ddcw"]
 [ext_resource type="PackedScene" uid="uid://buwo4i7mxxfv3" path="res://scenes/hud.tscn" id="3_e0pml"]
 [ext_resource type="PackedScene" uid="uid://dy5vyatq360dc" path="res://scenes/pause_menu.tscn" id="4_ema30"]
+[ext_resource type="PackedScene" uid="uid://btm5fg74xn1qh" path="res://scenes/game_over_screen.tscn" id="6_3gcfr"]
 
 [node name="florest" type="Node2D"]
 script = ExtResource("1_bq1m7")
+
+[node name="passage_area" parent="." instance=ExtResource("2_1ddcw")]
+position = Vector2(164, 8)
+scale = Vector2(3, 3)
+target_area = "res://scenes/outdoor_scene.tscn"
+player_position = Vector2(255, 575)
 
 [node name="placeholder_outdoor" type="Node2D" parent="."]
 
@@ -40,6 +47,11 @@ offset_right = 40.0
 offset_bottom = 648.0
 color = Color(0.172549, 0.45098, 0.282353, 1)
 
+[node name="StaticBody2D" type="StaticBody2D" parent="placeholder_outdoor"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="placeholder_outdoor/StaticBody2D"]
+polygon = PackedVector2Array(37, 0, 44, 591, 1075, 590, 1077, 72, 305, 71, 304, -6, 1157, -3, 1154, 643, -2, 648, 0, -7)
+
 [node name="Player" parent="." instance=ExtResource("1_hkoe8")]
 position = Vector2(160, 85)
 
@@ -49,6 +61,8 @@ position = Vector2(160, 85)
 
 [node name="pause_menu" parent="canvas" instance=ExtResource("4_ema30")]
 visible = false
+
+[node name="game_over_screen" parent="canvas" instance=ExtResource("6_3gcfr")]
 
 [node name="tree_spawn_markers" type="Node2D" parent="."]
 
@@ -89,12 +103,6 @@ position = Vector2(264, 504)
 position = Vector2(128, 440)
 
 [node name="tree_group" type="Node2D" parent="."]
-
-[node name="passage_area" parent="." instance=ExtResource("2_1ddcw")]
-position = Vector2(164, 8)
-scale = Vector2(3, 3)
-target_area = "res://scenes/outdoor_scene.tscn"
-player_position = Vector2(255, 575)
 
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
 [connection signal="body_entered" from="passage_area" to="." method="_on_passage_area_body_entered"]

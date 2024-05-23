@@ -22,7 +22,7 @@ func _on_area_2d_body_entered(body):
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("shoots"):
 		var heart = HEART_RESOURCE.instantiate()
-		if randi_range(1, 2) == 1:
+		if randi_range(1, 3) == 1:
 			get_parent().get_parent().get_node("resources").add_child(heart)
 			heart.global_position = global_position
 		area.queue_free()

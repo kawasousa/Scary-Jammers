@@ -89,7 +89,6 @@ color = Color(0.431373, 0.286275, 0.129412, 1)
 [node name="Stick" type="Sprite2D" parent="scenario_placeholder/table_scenario"]
 position = Vector2(482, 134)
 rotation = -0.23911
-scale = Vector2(1, 1)
 texture = ExtResource("3_dalu6")
 
 [node name="Stick2" type="Sprite2D" parent="scenario_placeholder/table_scenario"]
@@ -103,7 +102,6 @@ texture = ExtResource("3_dalu6")
 [node name="Stick4" type="Sprite2D" parent="scenario_placeholder/table_scenario"]
 position = Vector2(707, 176)
 rotation = -1.55509
-scale = Vector2(1, 1)
 texture = ExtResource("3_dalu6")
 
 [node name="Stick5" type="Sprite2D" parent="scenario_placeholder/table_scenario"]
@@ -142,13 +140,11 @@ texture = ExtResource("6_1rode")
 [node name="Heart" type="Sprite2D" parent="scenario_placeholder/table_scenario"]
 position = Vector2(714, 217)
 rotation = -0.174533
-scale = Vector2(1, 1)
 texture = ExtResource("7_x8lxv")
 
 [node name="Stick6" type="Sprite2D" parent="scenario_placeholder/table_scenario"]
 position = Vector2(518, 181)
 rotation = -0.23911
-scale = Vector2(1, 1)
 texture = ExtResource("3_dalu6")
 
 [node name="paredes" type="Node2D" parent="scenario_placeholder"]
@@ -182,26 +178,34 @@ offset_right = 304.0
 offset_bottom = 648.0
 color = Color(0.301961, 0.219608, 0.172549, 0.996078)
 
+[node name="StaticBody2D" type="StaticBody2D" parent="scenario_placeholder"]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="scenario_placeholder/StaticBody2D"]
+polygon = PackedVector2Array(304, 648, 305, 630, 88, 632, 88, 449, 322, 450, 320, 384, 102, 383, 105, 279, 169, 279, 169, 17, 1113, 19, 1111, 95, 1040, 99, 1039, 273, 1109, 272, 1110, 382, 445, 383, 447, 449, 1060, 449, 1060, 631, 466, 630, 467, 646, 1155, 648, 1149, -2, 2, 1, -2, 647)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="scenario_placeholder/StaticBody2D"]
+polygon = PackedVector2Array(441, 112, 440, 289, 736, 289, 735, 112)
+
 [node name="Player" parent="." instance=ExtResource("2_cnpi6")]
 position = Vector2(385, 540)
-
-[node name="inventory" parent="." instance=ExtResource("7_rk743")]
-offset_left = 589.0
-offset_top = 262.0
-offset_right = 589.0
-offset_bottom = 262.0
 
 [node name="Canvas" type="Node" parent="."]
 
 [node name="HUD" parent="Canvas" instance=ExtResource("2_864eu")]
 
-[node name="pause_menu" parent="Canvas" instance=ExtResource("1_viooo")]
-visible = false
-
 [node name="game_over_screen" parent="Canvas" instance=ExtResource("6_s5mbg")]
 visible = false
 message = "Os Jammer invadiram a casa"
 
+[node name="pause_menu" parent="Canvas" instance=ExtResource("1_viooo")]
+visible = false
+
+[node name="inventory" parent="." instance=ExtResource("7_rk743")]
+offset_left = 588.0
+offset_top = 211.0
+offset_right = 588.0
+offset_bottom = 211.0
+
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
 [connection signal="body_entered" from="passage_area" to="." method="_on_passage_area_body_entered"]
-[connection signal="tree_exited" from="inventory" to="." method="_on_inventory_tree_exited"]

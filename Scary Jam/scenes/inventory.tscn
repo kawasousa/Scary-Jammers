@@ -1,17 +1,20 @@
-[gd_scene load_steps=14 format=3 uid="uid://cuwvdickdojxe"]
+[gd_scene load_steps=15 format=3 uid="uid://cuwvdickdojxe"]
 
 [ext_resource type="Script" path="res://script/inventory.gd" id="1_y52ir"]
 [ext_resource type="Texture2D" uid="uid://b2mm1qi1tj3sh" path="res://assets/life_icon.png" id="2_36t2i"]
 [ext_resource type="Texture2D" uid="uid://c3lrqlwc65vgy" path="res://assets/gun.png" id="3_b58mw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y26ca"]
-size = Vector2(195, 127)
+size = Vector2(327, 233)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_smgq4"]
 texture = ExtResource("2_36t2i")
 modulate_color = Color(1, 1, 1, 0.588235)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kaplr"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tno6o"]
+texture = ExtResource("2_36t2i")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_err58"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rkspf"]
 texture = ExtResource("2_36t2i")
@@ -47,9 +50,18 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_y52ir")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -148.0
+offset_top = -100.0
+offset_right = 148.0
+offset_bottom = 77.0
+color = Color(0.247059, 0.247059, 0.247059, 0.670588)
+
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
 shape = SubResource("RectangleShape2D_y26ca")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Area2D"]
@@ -75,15 +87,21 @@ theme_override_constants/separation = 50
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_smgq4")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_kaplr")
+theme_override_styles/hover = SubResource("StyleBoxTexture_tno6o")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_err58")
 theme_override_styles/focus = SubResource("StyleBoxTexture_rkspf")
 
 [node name="life" type="Label" parent="Area2D/VBoxContainer/HBoxContainer/plus_life"]
-offset_left = -2.0
+layout_mode = 0
+offset_left = -5.0
 offset_top = -27.0
-offset_right = 44.0
+offset_right = 43.0
 offset_bottom = -4.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.588235)
+theme_override_font_sizes/font_size = 10
 text = "+Vida"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="plus_shoot" type="Button" parent="Area2D/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(45, 23)
@@ -93,29 +111,32 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_q7ecq")
 theme_override_styles/focus = SubResource("StyleBoxTexture_by7sb")
 
 [node name="shoot" type="Label" parent="Area2D/VBoxContainer/HBoxContainer/plus_shoot"]
+layout_mode = 0
 offset_left = -5.0
 offset_top = -27.0
-offset_right = 46.0
+offset_right = 53.0
 offset_bottom = -4.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.588235)
+theme_override_font_sizes/font_size = 10
 text = "+Balas"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="quit_menu" type="Button" parent="Area2D/VBoxContainer"]
-custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 0.588235)
 theme_override_colors/font_pressed_color = Color(0.731274, 0.702113, 0.240797, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/normal = SubResource("StyleBoxTexture_impsa")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_vcpvi")
 theme_override_styles/focus = SubResource("StyleBoxTexture_ri3gi")
 text = "voltar"
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="pressed" from="Area2D/VBoxContainer/HBoxContainer/plus_life" to="." method="_on_life_pressed"]
 [connection signal="pressed" from="Area2D/VBoxContainer/HBoxContainer/plus_life" to="." method="_on_plus_life_pressed"]
-[connection signal="pressed" from="Area2D/VBoxContainer/HBoxContainer/plus_shoot" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Area2D/VBoxContainer/HBoxContainer/plus_life" to="." method="_on_life_pressed"]
 [connection signal="pressed" from="Area2D/VBoxContainer/HBoxContainer/plus_shoot" to="." method="_on_plus_shoot_pressed"]
-[connection signal="pressed" from="Area2D/VBoxContainer/quit_menu" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Area2D/VBoxContainer/HBoxContainer/plus_shoot" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Area2D/VBoxContainer/quit_menu" to="." method="_on_quit_menu_pressed"]
+[connection signal="pressed" from="Area2D/VBoxContainer/quit_menu" to="." method="_on_quit_pressed"]

@@ -70,6 +70,7 @@ size_flags_horizontal = 4
 layout_mode = 2
 theme = SubResource("Theme_fbqb7")
 shortcut = SubResource("Shortcut_7r2bv")
+shortcut_in_tooltip = false
 text = "voltar ao jogo"
 
 [node name="quit_to_menu_button" type="Button" parent="Control/VBoxContainer"]

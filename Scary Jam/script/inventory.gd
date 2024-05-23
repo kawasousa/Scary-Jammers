@@ -27,10 +27,10 @@ func _on_plus_shoot_pressed():
 	if Global.player_shoot_resource > 0:
 			Global.player_shoot_resource -= 1
 			Global.player_shooots += 1
-			Global.can_spawn_trees = true
+			Global.can_spawn_shoot_resources = true
 
 func open_inventory() -> void:
-	if  Input.is_action_just_pressed("open_inventory"):
+	if Input.is_action_just_pressed("open_inventory"):
 		if area_2d.overlaps_body(Global.player_node):
 			Global.player_node.can_move = false
 			visible = true

@@ -1,11 +1,10 @@
 extends Area2D
 
-@onready var texture_rect = $TextureRect
+@onready var texture_rect = $ColorRect
 
 
 func _process(delta):
 	movement(delta)
-	texture_rect.size = Vector2(20, 20)
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free()

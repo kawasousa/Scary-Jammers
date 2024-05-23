@@ -7,12 +7,14 @@ extends CanvasLayer
 @onready var invasion_rect = $invasion/invasion_rect
 @onready var invasion = $invasion
 @onready var invasion_alert_polygon = $invasion/invasion_alert_polygon
+@onready var time_label = $day_time/time_label
 
 
 func _ready():
 	Global.hud_node = self
 
 func _process(delta):
+	set_left_time_label()
 	update_player_shoot_label()
 	update_time_to_invasion_rect(delta)
 	update_player_life_label()
@@ -23,7 +25,7 @@ func update_player_shoot_label() -> void:
 	shoot_rect.custom_minimum_size.x = Global.player_shooots * 10
 
 func update_time_to_invasion_rect(delta) -> void:
-	invasion_rect.custom_minimum_size.x = Global.invasion_rect_factor
+	invasion_rect.custom_minimum_size.x = Global.invasion_rect_factor * 0.25
 	invasion_alert_polygon.position.y += sin((Engine.get_frames_drawn() * delta * 5)) * 0.2
 
 func update_player_life_label() -> void:
@@ -36,7 +38,11 @@ func update_life_resource_label() -> void:
 	life_resource_label.text = str(Global.player_life_resource)
 
 func show_invasion_label() -> void:
-	if get_tree().current_scene.name == "house":
+	if Global.can_start_invasion_timer:
 		invasion.visible = true
 	else:
 		invasion.visible = false
+
+func set_left_time_label() -> void:
+	var seconds = Global.game_seconds
+	time_label.text = "Hora: 0%s:%s" %[Global.game_minutes, Global.game_seconds]

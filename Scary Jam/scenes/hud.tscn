@@ -8,7 +8,7 @@
 script = ExtResource("1_fmoib")
 
 [node name="shoot" type="Node2D" parent="."]
-position = Vector2(249, 32)
+position = Vector2(424.129, 31.2599)
 
 [node name="shoot_rect" type="ColorRect" parent="shoot"]
 custom_minimum_size = Vector2(0, 20)
@@ -28,7 +28,7 @@ scale = Vector2(1.2, 1.2)
 texture = ExtResource("2_k5cx3")
 
 [node name="invasion" type="Node2D" parent="."]
-position = Vector2(325, 588)
+position = Vector2(713, 594)
 
 [node name="invasion_rect" type="ColorRect" parent="invasion"]
 offset_left = 185.0
@@ -50,7 +50,7 @@ text = "invasão da casa em:"
 metadata/_edit_use_anchors_ = true
 
 [node name="life" type="Node2D" parent="."]
-position = Vector2(30, 30)
+position = Vector2(205.129, 29.2599)
 
 [node name="life_rect" type="ColorRect" parent="life"]
 custom_minimum_size = Vector2(0, 5)
@@ -67,7 +67,7 @@ offset_bottom = 40.0
 texture = ExtResource("2_00x5p")
 
 [node name="shoot_resource" type="Node2D" parent="."]
-position = Vector2(114, 594)
+position = Vector2(114, 593)
 
 [node name="shoot_resource_texture" type="TextureRect" parent="shoot_resource"]
 self_modulate = Color(1, 1, 1, 0.588235)
@@ -97,7 +97,7 @@ theme_override_constants/outline_size = 1
 text = "0"
 
 [node name="life_resource" type="Node2D" parent="."]
-position = Vector2(30, 588)
+position = Vector2(40, 585)
 
 [node name="life_resource_texture" type="TextureRect" parent="life_resource"]
 self_modulate = Color(1, 1, 1, 0.588235)
@@ -115,3 +115,13 @@ theme_override_colors/font_color = Color(1, 0.14, 0.14, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 text = "0"
+
+[node name="day_time" type="Node2D" parent="."]
+position = Vector2(40, 40)
+
+[node name="time_label" type="Label" parent="day_time"]
+offset_left = -0.0304565
+offset_top = -5.6059
+offset_right = 105.97
+offset_bottom = 16.3941
+text = "Hora: 00:00"
