@@ -11,10 +11,11 @@ script = ExtResource("1_fmoib")
 position = Vector2(249, 32)
 
 [node name="shoot_rect" type="ColorRect" parent="shoot"]
-offset_left = 24.0
-offset_top = 26.0
-offset_right = 24.0
-offset_bottom = 36.0
+custom_minimum_size = Vector2(0, 20)
+offset_left = 40.0
+offset_top = 10.0
+offset_right = 40.0
+offset_bottom = 30.0
 color = Color(0.619608, 0.494118, 0.223529, 1)
 
 [node name="TextureRect" type="TextureRect" parent="shoot"]
@@ -27,35 +28,26 @@ scale = Vector2(1.2, 1.2)
 texture = ExtResource("2_k5cx3")
 
 [node name="invasion" type="Node2D" parent="."]
-position = Vector2(414, 588)
+position = Vector2(325, 588)
 
 [node name="invasion_rect" type="ColorRect" parent="invasion"]
-offset_left = 96.0
+offset_left = 185.0
 offset_top = 3.0
-offset_right = 96.0
+offset_right = 185.0
 offset_bottom = 23.0
 color = Color(0, 0.847059, 0.85098, 1)
 metadata/_edit_use_anchors_ = true
+
+[node name="invasion_alert_polygon" type="Polygon2D" parent="invasion"]
+position = Vector2(93, 0)
+color = Color(0, 0.847059, 0.85098, 1)
+polygon = PackedVector2Array(297, 3, 297, 23, 301, 23, 301, 19, 297, 19, 297, 18, 301, 18, 301, 3)
 
 [node name="invasion_label" type="Label" parent="invasion"]
-offset_right = 93.0
+offset_right = 155.0
 offset_bottom = 23.0
-text = "Invasão em:"
+text = "invasão da casa em:"
 metadata/_edit_use_anchors_ = true
-
-[node name="invasion_limit_rect" type="ColorRect" parent="invasion"]
-offset_left = 297.0
-offset_top = 3.0
-offset_right = 301.0
-offset_bottom = 18.0
-color = Color(0, 0.847059, 0.85098, 1)
-
-[node name="invasion_limit_rect2" type="ColorRect" parent="invasion"]
-offset_left = 297.0
-offset_top = 19.0
-offset_right = 301.0
-offset_bottom = 23.0
-color = Color(0, 0.847059, 0.85098, 1)
 
 [node name="life" type="Node2D" parent="."]
 position = Vector2(30, 30)
@@ -99,7 +91,7 @@ offset_left = 23.0
 offset_top = 7.0
 offset_right = 63.0
 offset_bottom = 30.0
-theme_override_colors/font_color = Color(1, 0.22, 0.22, 1)
+theme_override_colors/font_color = Color(1, 0.14, 0.14, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 text = "0"
@@ -119,7 +111,7 @@ offset_left = 23.0
 offset_top = 13.0
 offset_right = 33.0
 offset_bottom = 36.0
-theme_override_colors/font_color = Color(1, 0.22, 0.22, 1)
+theme_override_colors/font_color = Color(1, 0.14, 0.14, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 text = "0"

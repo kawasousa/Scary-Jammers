@@ -1,18 +1,36 @@
-[gd_scene load_steps=8 format=3 uid="uid://cuwvdickdojxe"]
+[gd_scene load_steps=14 format=3 uid="uid://cuwvdickdojxe"]
 
-[ext_resource type="Theme" uid="uid://c07wpxevc7kyv" path="res://themes/button.tres" id="1_mp32s"]
 [ext_resource type="Script" path="res://script/inventory.gd" id="1_y52ir"]
-[ext_resource type="Texture2D" uid="uid://deejpf5pimjup" path="res://assets/carinha.png" id="3_mb0n8"]
-[ext_resource type="Texture2D" uid="uid://41io85ilblws" path="res://assets/heart.png" id="4_4edqr"]
+[ext_resource type="Texture2D" uid="uid://b2mm1qi1tj3sh" path="res://assets/life_icon.png" id="2_36t2i"]
+[ext_resource type="Texture2D" uid="uid://c3lrqlwc65vgy" path="res://assets/gun.png" id="3_b58mw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i8dxd"]
-size = Vector2(189, 78)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dq781"]
-texture = ExtResource("3_mb0n8")
+size = Vector2(203, 82)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_smgq4"]
-texture = ExtResource("4_4edqr")
+texture = ExtResource("2_36t2i")
+modulate_color = Color(1, 1, 1, 0.588235)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kaplr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rkspf"]
+texture = ExtResource("2_36t2i")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dq781"]
+texture = ExtResource("3_b58mw")
+modulate_color = Color(1, 1, 1, 0.588235)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q7ecq"]
+modulate_color = Color(1, 1, 1, 0.588235)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_by7sb"]
+texture = ExtResource("3_b58mw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_impsa"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vcpvi"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ri3gi"]
 
 [node name="inventory" type="Control"]
 layout_mode = 3
@@ -28,7 +46,7 @@ script = ExtResource("1_y52ir")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(82.5, 36)
+position = Vector2(89.5, 38)
 shape = SubResource("RectangleShape2D_i8dxd")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
@@ -37,39 +55,49 @@ offset_right = 40.0
 offset_bottom = 40.0
 theme_override_constants/separation = 20
 
-[node name="Button" type="Button" parent="HBoxContainer"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-theme = ExtResource("1_mp32s")
-theme_override_styles/normal = SubResource("StyleBoxTexture_dq781")
-
-[node name="Label" type="Label" parent="HBoxContainer/Button"]
-layout_mode = 0
-offset_left = -5.0
-offset_top = -23.0
-offset_right = 46.0
-text = "+Balas"
-
-[node name="life" type="Button" parent="HBoxContainer"]
+[node name="plus_life" type="Button" parent="HBoxContainer"]
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
-theme = ExtResource("1_mp32s")
 theme_override_styles/normal = SubResource("StyleBoxTexture_smgq4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kaplr")
+theme_override_styles/focus = SubResource("StyleBoxTexture_rkspf")
 
-[node name="life" type="Label" parent="HBoxContainer/life"]
+[node name="life" type="Label" parent="HBoxContainer/plus_life"]
 layout_mode = 0
 offset_left = -2.0
 offset_top = -23.0
 offset_right = 44.0
 text = "+Vida"
 
-[node name="quit" type="Button" parent="HBoxContainer"]
+[node name="plus_shoot" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(45, 23)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_dq781")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_q7ecq")
+theme_override_styles/focus = SubResource("StyleBoxTexture_by7sb")
+
+[node name="Label" type="Label" parent="HBoxContainer/plus_shoot"]
+layout_mode = 0
+offset_left = -5.0
+offset_top = -23.0
+offset_right = 46.0
+text = "+Balas"
+
+[node name="quit_menu" type="Button" parent="HBoxContainer"]
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
-theme = ExtResource("1_mp32s")
-text = "Voltar"
+theme_override_colors/font_color = Color(1, 1, 1, 0.588235)
+theme_override_colors/font_pressed_color = Color(0.731274, 0.702113, 0.240797, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_impsa")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_vcpvi")
+theme_override_styles/focus = SubResource("StyleBoxTexture_ri3gi")
+text = "voltar"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/life" to="." method="_on_life_pressed"]
-[connection signal="pressed" from="HBoxContainer/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="HBoxContainer/plus_life" to="." method="_on_life_pressed"]
+[connection signal="pressed" from="HBoxContainer/plus_life" to="." method="_on_plus_life_pressed"]
+[connection signal="pressed" from="HBoxContainer/plus_shoot" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/plus_shoot" to="." method="_on_plus_shoot_pressed"]
+[connection signal="pressed" from="HBoxContainer/quit_menu" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="HBoxContainer/quit_menu" to="." method="_on_quit_menu_pressed"]

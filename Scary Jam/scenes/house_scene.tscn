@@ -130,4 +130,5 @@ offset_top = 226.0
 offset_right = 516.0
 offset_bottom = 226.0
 
+[connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
 [connection signal="body_entered" from="passage_area" to="." method="_on_passage_area_body_entered"]

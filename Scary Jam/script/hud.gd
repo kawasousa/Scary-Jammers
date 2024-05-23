@@ -6,14 +6,15 @@ extends CanvasLayer
 @onready var shoot_rect = $shoot/shoot_rect
 @onready var invasion_rect = $invasion/invasion_rect
 @onready var invasion = $invasion
+@onready var invasion_alert_polygon = $invasion/invasion_alert_polygon
 
 
 func _ready():
 	Global.hud_node = self
 
-func _process(_delta):
+func _process(delta):
 	update_player_shoot_label()
-	update_time_to_invasion_rect()
+	update_time_to_invasion_rect(delta)
 	update_player_life_label()
 	update_shoot_resource_label()
 	show_invasion_label()
@@ -21,8 +22,9 @@ func _process(_delta):
 func update_player_shoot_label() -> void:
 	shoot_rect.custom_minimum_size.x = Global.player_shooots * 10
 
-func update_time_to_invasion_rect() -> void:
+func update_time_to_invasion_rect(delta) -> void:
 	invasion_rect.custom_minimum_size.x = Global.invasion_rect_factor
+	invasion_alert_polygon.position.y += sin((Engine.get_frames_drawn() * 0.1)) * 0.2
 
 func update_player_life_label() -> void:
 	life_rect.custom_minimum_size.x = Global.player_life * 30

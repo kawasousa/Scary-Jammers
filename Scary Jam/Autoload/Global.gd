@@ -17,6 +17,7 @@ var player_life: int
 var player_shoot_resource: int
 var player_life_resource: int
 var can_spawn_enemies: bool = false
+var can_spawn_trees: bool = true
 
 
 func _ready():
@@ -24,6 +25,7 @@ func _ready():
 	player_life_resource = 0
 	player_life = 5
 	player_shooots = 0
+	Input.set_custom_mouse_cursor(load("res://assets/UI_Flat_Select_02a1.png"))
 
 func _process(_delta):
 	get_bullet()
@@ -52,11 +54,11 @@ func _on_invasion_timer_timeout():
 
 func spawn_enemy() -> void:
 	if can_spawn_enemies == true and get_tree().get_nodes_in_group("enemy").size() < 2:
-			for spawner in outdoor_scene_node.get_node("enemy_spawner").get_children():
-				var enemy = ENEMY_SCENE.instantiate()
-				enemy.global_position = spawner.global_position
-				outdoor_scene_node.get_node("enemy_group").add_child(enemy)
-				enemy.add_to_group("enemy")
+		for spawner in outdoor_scene_node.get_node("enemy_spawner").get_children():
+			var enemy = ENEMY_SCENE.instantiate()
+			enemy.global_position = spawner.global_position
+			outdoor_scene_node.get_node("enemy_group").add_child(enemy)
+			enemy.add_to_group("enemy")
 
 func reduce_player_life() -> void:
 	player_life -= 1

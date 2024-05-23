@@ -17,6 +17,7 @@ func movement(delta) -> void:
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("Player"):
 		Global.reduce_player_life()
+		body.global_position -= global_position - body.global_position
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("shoots"):

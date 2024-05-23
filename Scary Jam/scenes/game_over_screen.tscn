@@ -119,9 +119,9 @@ horizontal_alignment = 1
 
 [node name="restart_button" type="Button" parent="AnimationPlayer"]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = 488.0
+offset_left = 465.0
 offset_top = 384.0
-offset_right = 663.0
+offset_right = 640.0
 offset_bottom = 415.0
 text = "voltar ao menu inicial"
 

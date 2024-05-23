@@ -96,4 +96,5 @@ scale = Vector2(3, 3)
 target_area = "res://scenes/outdoor_scene.tscn"
 player_position = Vector2(255, 575)
 
+[connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
 [connection signal="body_entered" from="passage_area" to="." method="_on_passage_area_body_entered"]
