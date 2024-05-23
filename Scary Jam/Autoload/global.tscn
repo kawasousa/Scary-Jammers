@@ -6,6 +6,7 @@
 script = ExtResource("1_iftkh")
 
 [node name="tick_timer" type="Timer" parent="."]
+wait_time = 0.05
 
 [node name="invasion_timer" type="Timer" parent="."]
 wait_time = 10.0
@@ -13,7 +14,7 @@ wait_time = 10.0
 [node name="spawn_enemy_timer" type="Timer" parent="."]
 autostart = true
 
-[connection signal="timeout" from="tick_timer" to="." method="_on_tick_timer_timeout"]
 [connection signal="timeout" from="tick_timer" to="." method="_on_day_night_timer_timeout"]
+[connection signal="timeout" from="tick_timer" to="." method="_on_tick_timer_timeout"]
 [connection signal="timeout" from="invasion_timer" to="." method="_on_invasion_timer_timeout"]
 [connection signal="timeout" from="spawn_enemy_timer" to="." method="_on_spawn_enemy_timer_timeout"]

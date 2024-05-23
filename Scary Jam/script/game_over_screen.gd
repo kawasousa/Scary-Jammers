@@ -22,7 +22,7 @@ func _on_restart_button_pressed():
 	get_tree().paused = false
 	Global.game_over = false
 	Global.player_life = 5
-	Global.hour_rect_size_factor = 0
+	Global.invasion_rect_factor = 0
 	get_tree().change_scene_to_file("res://scenes/menu_inicial.tscn")
 
 func set_label_message() -> void:

@@ -12,7 +12,7 @@ func _on_body_entered(body):
 
 func _process(delta):
 	update_configuration_warnings()
-	
+
 func _get_configuration_warnings():
 	var warnings = []
 	if len(target_area) <= 0:

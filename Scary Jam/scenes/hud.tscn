@@ -1,51 +1,125 @@
-[gd_scene load_steps=2 format=3 uid="uid://buwo4i7mxxfv3"]
+[gd_scene load_steps=4 format=3 uid="uid://buwo4i7mxxfv3"]
 
 [ext_resource type="Script" path="res://script/hud.gd" id="1_fmoib"]
+[ext_resource type="Texture2D" uid="uid://b2mm1qi1tj3sh" path="res://assets/life_icon.png" id="2_00x5p"]
+[ext_resource type="Texture2D" uid="uid://c3lrqlwc65vgy" path="res://assets/gun.png" id="2_k5cx3"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_fmoib")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="shoot" type="Node2D" parent="."]
+position = Vector2(249, 32)
+
+[node name="shoot_rect" type="ColorRect" parent="shoot"]
+offset_left = 24.0
+offset_top = 26.0
+offset_right = 24.0
+offset_bottom = 36.0
+color = Color(0.619608, 0.494118, 0.223529, 1)
+
+[node name="TextureRect" type="TextureRect" parent="shoot"]
+offset_left = -1.0
+offset_top = 10.0
+offset_right = 31.0
+offset_bottom = 33.0
+rotation = -0.349066
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_k5cx3")
+
+[node name="invasion" type="Node2D" parent="."]
+position = Vector2(414, 588)
+
+[node name="invasion_rect" type="ColorRect" parent="invasion"]
+offset_left = 96.0
+offset_top = 3.0
+offset_right = 96.0
+offset_bottom = 23.0
+color = Color(0, 0.847059, 0.85098, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="invasion_label" type="Label" parent="invasion"]
+offset_right = 93.0
+offset_bottom = 23.0
+text = "Invasão em:"
+metadata/_edit_use_anchors_ = true
+
+[node name="invasion_limit_rect" type="ColorRect" parent="invasion"]
+offset_left = 297.0
+offset_top = 3.0
+offset_right = 301.0
+offset_bottom = 18.0
+color = Color(0, 0.847059, 0.85098, 1)
+
+[node name="invasion_limit_rect2" type="ColorRect" parent="invasion"]
+offset_left = 297.0
+offset_top = 19.0
+offset_right = 301.0
+offset_bottom = 23.0
+color = Color(0, 0.847059, 0.85098, 1)
+
+[node name="life" type="Node2D" parent="."]
+position = Vector2(30, 30)
+
+[node name="life_rect" type="ColorRect" parent="life"]
+custom_minimum_size = Vector2(0, 5)
+offset_left = 36.0
+offset_top = 8.0
+offset_right = 36.0
+offset_bottom = 32.0
+color = Color(0.709804, 0.0588235, 0.0588235, 1)
+
+[node name="TextureRect" type="TextureRect" parent="life"]
+custom_minimum_size = Vector2(40, 40)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_00x5p")
+
+[node name="shoot_resource" type="Node2D" parent="."]
+position = Vector2(114, 594)
+
+[node name="shoot_resource_texture" type="TextureRect" parent="shoot_resource"]
+self_modulate = Color(1, 1, 1, 0.588235)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = 6.10352e-05
+offset_right = 69.0
+offset_bottom = 50.0001
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-theme_override_constants/margin_left = 30
-theme_override_constants/margin_top = 30
+rotation = -0.349066
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_k5cx3")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-size_flags_vertical = 0
-mouse_filter = 2
-theme_override_constants/separation = 100
+[node name="shoot_resource_label" type="Label" parent="shoot_resource"]
+offset_left = 23.0
+offset_top = 7.0
+offset_right = 63.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(1, 0.22, 0.22, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+text = "0"
 
-[node name="recurso_shoot" type="Label" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-text = "Recurso -> Bala: 0"
+[node name="life_resource" type="Node2D" parent="."]
+position = Vector2(30, 588)
 
-[node name="recurso_life" type="Label" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-text = "Recurso -> Vida: 0"
+[node name="life_resource_texture" type="TextureRect" parent="life_resource"]
+self_modulate = Color(1, 1, 1, 0.588235)
+offset_right = 32.0
+offset_bottom = 31.0
+texture = ExtResource("2_00x5p")
+stretch_mode = 2
 
-[node name="bullets_label" type="Label" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-text = "Balas: 0"
-
-[node name="player_life" type="Label" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-text = "Saúde: 0"
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer"]
-layout_mode = 2
-text = "Invasão em:"
-
-[node name="hour_rect" type="ColorRect" parent="MarginContainer/HBoxContainer/HBoxContainer"]
-layout_mode = 2
-color = Color(0, 0.847059, 0.85098, 1)
+[node name="life_resource_label" type="Label" parent="life_resource"]
+offset_left = 23.0
+offset_top = 13.0
+offset_right = 33.0
+offset_bottom = 36.0
+theme_override_colors/font_color = Color(1, 0.22, 0.22, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+text = "0"

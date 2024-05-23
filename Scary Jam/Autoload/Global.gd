@@ -9,13 +9,13 @@ var enemy_node
 var house_scene_node
 var outdoor_scene_node
 var hud_node
-var hour_rect_size_factor: int = 0
-var player_shooots: int
+var invasion_rect_factor: int = 0
+var player_position: Vector2 = Vector2(385, 540)
 var player_node
+var player_shooots: int
 var player_life: int
 var player_shoot_resource: int
 var player_life_resource: int
-var player_position: Vector2 = Vector2(385, 540)
 var can_spawn_enemies: bool = false
 
 
@@ -43,9 +43,9 @@ func update_bullets(update_factor) -> int:
 	return player_shooots
 
 func _on_tick_timer_timeout():
-	hour_rect_size_factor += 1
-	if hour_rect_size_factor == 11:
-		hour_rect_size_factor = 1
+	invasion_rect_factor += 1
+	if invasion_rect_factor == 200:
+		invasion_rect_factor = 1
 
 func _on_invasion_timer_timeout():
 	game_over = true

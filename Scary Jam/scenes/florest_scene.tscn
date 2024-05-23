@@ -9,12 +9,6 @@
 [node name="florest" type="Node2D"]
 script = ExtResource("1_bq1m7")
 
-[node name="passage_area" parent="." instance=ExtResource("2_1ddcw")]
-position = Vector2(164, 8)
-scale = Vector2(3, 3)
-target_area = "res://scenes/outdoor_scene.tscn"
-player_position = Vector2(255, 575)
-
 [node name="placeholder_outdoor" type="Node2D" parent="."]
 
 [node name="ground" type="ColorRect" parent="placeholder_outdoor"]
@@ -47,7 +41,7 @@ offset_bottom = 648.0
 color = Color(0.172549, 0.45098, 0.282353, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_hkoe8")]
-position = Vector2(160, 40)
+position = Vector2(160, 85)
 
 [node name="canvas" type="Node2D" parent="."]
 
@@ -95,3 +89,11 @@ position = Vector2(264, 504)
 position = Vector2(128, 440)
 
 [node name="tree_group" type="Node2D" parent="."]
+
+[node name="passage_area" parent="." instance=ExtResource("2_1ddcw")]
+position = Vector2(164, 8)
+scale = Vector2(3, 3)
+target_area = "res://scenes/outdoor_scene.tscn"
+player_position = Vector2(255, 575)
+
+[connection signal="body_entered" from="passage_area" to="." method="_on_passage_area_body_entered"]

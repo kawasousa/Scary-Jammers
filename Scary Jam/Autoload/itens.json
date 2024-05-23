@@ -7,6 +7,9 @@
 	},
 	"2": {
 		"texture": "tree.png"
+	},
+	"3": {
+		"texture": "gun.png"
 	}
 }
 
