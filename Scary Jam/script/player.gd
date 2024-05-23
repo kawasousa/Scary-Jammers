@@ -20,25 +20,28 @@ func _physics_process(delta):
 
 ## Movimentação do jogador
 func movement(delta) -> void:
-	var directonX = Input.get_axis("ui_left", "ui_right")
-	if directonX > 0:
-		velocity.x = directonX * delta * SPEED
+	## movimento básico do player
+	
+	var directionX = Input.get_axis("ui_left", "ui_right")
+	if directionX > 0:
+		velocity.x = directionX * delta * SPEED
 		sprite.flip_h = false
-	elif directonX < 0:
-		velocity.x = directonX * delta * SPEED
+	elif directionX < 0:
+		velocity.x = directionX * delta * SPEED
 		sprite.flip_h = true
 	else:
 		velocity.x = 0
 	
-	var directonY = Input.get_axis("ui_up", "ui_down")
-	if directonY > 0:
-		velocity.y = directonY * delta * SPEED
-	elif directonY < 0:
-		velocity.y = directonY * delta * SPEED
+	var directionY = Input.get_axis("ui_up", "ui_down")
+	if directionY > 0:
+		velocity.y = directionY * delta * SPEED
+	elif directionY < 0:
+		velocity.y = directionY * delta * SPEED
 	else:
 		velocity.y = 0
 
 func shoot() -> void:
+	## tiros sendo adicionados através da criação de nós filhos 
 	if Input.is_action_just_pressed("shoot") and get_parent().name == "outdoor_scene" and Global.player_shooots > 0:
 		var shoot_instance = SHOOT_SCENE.instantiate()
 		get_parent().get_node("shoot_group").add_child(shoot_instance)
