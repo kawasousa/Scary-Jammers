@@ -25,7 +25,7 @@ func update_player_shoot_label() -> void:
 	shoot_rect.custom_minimum_size.x = Global.player_shooots * 10
 
 func update_time_to_invasion_rect(delta) -> void:
-	invasion_rect.custom_minimum_size.x = Global.invasion_rect_factor * 0.25
+	invasion_rect.custom_minimum_size.x = Global.invasion_rect_factor * 0.5
 	invasion_alert_polygon.position.y += sin((Engine.get_frames_drawn() * delta * 5)) * 0.2
 
 func update_player_life_label() -> void:

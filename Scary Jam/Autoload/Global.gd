@@ -13,7 +13,7 @@ var house_scene_node
 var outdoor_scene_node
 var hud_node
 var player_node
-var invasion_rect_factor: int
+var invasion_rect_factor: float
 var player_position: Vector2 = Vector2(385, 540)
 var player_shooots: int
 var player_life: int
@@ -51,9 +51,12 @@ func update_bullets(update_factor) -> int:
 
 func set_invasion_timer() -> void:
 	if can_start_invasion_timer:
-		invasion_rect_factor += 1
-		if invasion_rect_factor == 800:
+		invasion_rect_factor += 0.5
+		if invasion_rect_factor >= 400:
+			invasion_rect_factor = 0
 			game_over = true
+	else:
+		invasion_rect_factor = 0
 
 func spawn_enemy() -> void:
 	if can_spawn_enemies == true and get_tree().get_nodes_in_group("enemy").size() < 2 * game_day:
@@ -87,6 +90,7 @@ func reset_game_values() -> void:
 	invasion_rect_factor = 0
 	can_start_invasion_timer = false
 	can_spawn_enemies = false
+	can_spawn_shoot_resources = true
 	player_shoot_resource = 0
 	player_shooots = 0
 	player_life_resource = 0

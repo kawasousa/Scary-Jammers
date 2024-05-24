@@ -40,17 +40,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="logo" type="ColorRect" parent="Control"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -333.0
-offset_top = 106.0
-offset_right = 333.0
-offset_bottom = 196.0
-grow_horizontal = 2
-
 [node name="VBoxContainer" type="VBoxContainer" parent="Control"]
 layout_mode = 1
 anchors_preset = 8
@@ -76,6 +65,15 @@ text = "voltar ao jogo"
 [node name="quit_to_menu_button" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
 text = "sair para o menu inicial"
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 512.0
+offset_top = 207.0
+offset_right = 638.0
+offset_bottom = 247.0
+theme_override_font_sizes/font_size = 30
+text = "PAUSADO"
 
 [connection signal="pressed" from="Control/VBoxContainer/resume_button" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/quit_to_menu_button" to="." method="_on_quit_to_menu_button_pressed"]
