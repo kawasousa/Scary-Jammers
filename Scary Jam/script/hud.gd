@@ -19,6 +19,7 @@ func _process(delta):
 	update_time_to_invasion_rect(delta)
 	update_player_life_label()
 	update_shoot_resource_label()
+	update_life_resource_label()
 	show_invasion_label()
 
 func update_player_shoot_label() -> void:

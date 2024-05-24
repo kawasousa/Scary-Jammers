@@ -12,7 +12,6 @@ func _process(delta):
 	open_inventory()
 
 func _on_quit_menu_pressed():
-	Global.player_node.can_move = true
 	for button in get_node("Area2D/VBoxContainer/HBoxContainer").get_children():
 		button.release_focus()
 		quit_menu.release_focus()
@@ -32,6 +31,5 @@ func _on_plus_shoot_pressed():
 func open_inventory() -> void:
 	if Input.is_action_just_pressed("open_inventory"):
 		if area_2d.overlaps_body(Global.player_node):
-			Global.player_node.can_move = false
 			visible = true
 			plus_life.grab_focus()

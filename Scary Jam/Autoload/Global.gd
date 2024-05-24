@@ -8,6 +8,7 @@ var max_game_days: int = 5
 var game_day: int
 var game_seconds: int
 var game_minutes: int
+var game_match_minutes: int = 1
 var can_start_invasion_timer: bool = false
 var enemy_node
 var house_scene_node
@@ -60,7 +61,7 @@ func set_invasion_timer() -> void:
 		invasion_rect_factor = 0
 
 func spawn_enemy() -> void:
-	if can_spawn_enemies == true and get_tree().get_nodes_in_group("enemy").size() < 2 * game_day:
+	if can_spawn_enemies == true and get_tree().get_nodes_in_group("enemy").size() < ((max_game_days - game_day) + 1) * 2:
 		for spawner in outdoor_scene_node.get_node("enemy_spawner").get_children():
 			var enemy = ENEMY_SCENE.instantiate()
 			enemy.global_position = spawner.global_position
@@ -84,8 +85,8 @@ func check_player_life() -> void:
 func reset_game_values() -> void:
 	game_win = false
 	game_over = false
-	game_seconds = 10
-	game_minutes = 0
+	game_seconds = 0
+	game_minutes = game_match_minutes
 	timer.stop()
 	player_position = Vector2(385, 540)
 	invasion_rect_factor = 0
@@ -101,8 +102,8 @@ func reset_game_values() -> void:
 func _on_timer_timeout():
 	if game_minutes == 0 and game_seconds == 0:
 		game_day -= 1
-		game_minutes = 0
-		game_seconds = 10
+		game_minutes = game_match_minutes
+		game_seconds = 0
 	if game_seconds == 0:
 		game_seconds = 59
 		game_minutes -= 1

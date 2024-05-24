@@ -1,8 +1,10 @@
 extends Control
 
 @onready var quit_button = $VBoxContainer2/quit_button
+@onready var days_button = $VBoxContainer2/HBoxContainer/days_button
 
 func _ready():
+	days_button.select(Global.max_game_days - 1)
 	quit_button.grab_focus()
 
 func _on_quit_button_pressed():

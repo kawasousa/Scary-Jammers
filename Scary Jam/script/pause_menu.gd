@@ -1,12 +1,15 @@
 extends CanvasLayer
 
 @onready var resume_button = $Control/VBoxContainer/resume_button
+@onready var quit_to_menu_button = $Control/VBoxContainer/quit_to_menu_button
 
 func _ready():
 	visible = false
+	quit_to_menu_button.set_mouse_filter(Control.MOUSE_FILTER_IGNORE)
 
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel"):
+		quit_to_menu_button.set_mouse_filter(Control.MOUSE_FILTER_PASS)
 		resume_button.grab_focus()
 		get_tree().paused = true
 		visible = true
