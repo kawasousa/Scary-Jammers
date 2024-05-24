@@ -46,4 +46,4 @@ func show_invasion_label() -> void:
 func set_left_time_label() -> void:
 	var seconds = Global.game_seconds
 	var zero_second = "0" if seconds < 10 else ""
-	time_label.text = "Tempo para o dia: 0%s:%s%s" %[Global.game_minutes, zero_second, seconds]
+	time_label.text = "Dia: %s // 0%s:%s%s" %[Global.game_day, Global.game_minutes, zero_second, seconds]

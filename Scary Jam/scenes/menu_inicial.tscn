@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://script/menu_inicial.gd" id="1_q3aub"]
 
-[sub_resource type="Gradient" id="Gradient_o4td1"]
+[sub_resource type="Gradient" id="Gradient_exsin"]
 colors = PackedColorArray(0.17435, 0.174346, 0.195286, 1, 0.234, 0.234, 0.26, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ak022"]
-gradient = SubResource("Gradient_o4td1")
+gradient = SubResource("Gradient_exsin")
 fill_from = Vector2(0.5, 1)
 fill_to = Vector2(0.5, 0)
 metadata/_snap_enabled = true
@@ -49,7 +49,11 @@ size_flags_horizontal = 4
 [node name="play_button" type="Button" parent="VBoxContainer2"]
 layout_mode = 2
 theme = SubResource("Theme_6qgel")
-text = "novo jogo "
+text = "Novo jogo "
+
+[node name="days_button" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+text = "Opções"
 
 [node name="quit_button" type="Button" parent="VBoxContainer2"]
 layout_mode = 2
@@ -64,14 +68,15 @@ offset_bottom = 322.0
 theme_override_font_sizes/font_size = 80
 text = "Scary Jammers"
 
-[node name="Label2" type="Label" parent="."]
+[node name="Label2" type="Label" parent="Label"]
 layout_mode = 0
-offset_left = 16.0
-offset_top = 624.0
-offset_right = 151.0
-offset_bottom = 646.0
+offset_left = -247.0
+offset_top = 406.0
+offset_right = -112.0
+offset_bottom = 428.0
 theme_override_font_sizes/font_size = 7
 text = "by Felipe Marques and Kawã Sousa"
 
 [connection signal="pressed" from="VBoxContainer2/play_button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer2/days_button" to="." method="_on_days_button_pressed"]
 [connection signal="pressed" from="VBoxContainer2/quit_button" to="." method="_on_quit_button_pressed"]

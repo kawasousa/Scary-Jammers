@@ -4,6 +4,7 @@ const ENEMY_SCENE = preload("res://scenes/enemy_scene.tscn")
 @onready var timer: Timer = $Timer
 var game_over: bool = false
 var game_win: bool = false
+var max_game_days: int = 5
 var game_day: int
 var game_seconds: int
 var game_minutes: int
@@ -83,8 +84,8 @@ func check_player_life() -> void:
 func reset_game_values() -> void:
 	game_win = false
 	game_over = false
-	game_seconds = 0
-	game_minutes = 3
+	game_seconds = 10
+	game_minutes = 0
 	timer.stop()
 	player_position = Vector2(385, 540)
 	invasion_rect_factor = 0
@@ -95,18 +96,18 @@ func reset_game_values() -> void:
 	player_shooots = 0
 	player_life_resource = 0
 	player_life = 1
-	game_day = 1
+	game_day = max_game_days
 
 func _on_timer_timeout():
 	if game_minutes == 0 and game_seconds == 0:
-		game_day += 1
-		game_minutes = 5
-		game_seconds = 0
+		game_day -= 1
+		game_minutes = 0
+		game_seconds = 10
 	if game_seconds == 0:
 		game_seconds = 59
 		game_minutes -= 1
 	game_seconds -= 1
 
 func day_to_win() -> void:
-	if game_day == 3:
+	if game_day == 0:
 		game_win = true
