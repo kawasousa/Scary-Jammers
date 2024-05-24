@@ -3,6 +3,8 @@ class_name Enemy
 
 const SPEED = 10000
 const HEART_RESOURCE = preload("res://scenes/heart_resource.tscn")
+@onready var animated_sprite_2d = $AnimatedSprite2D
+
 
 func _ready():
 	Global.enemy_node = self
@@ -13,6 +15,7 @@ func _physics_process(delta):
 
 func movement(delta) -> void:
 	velocity = position.direction_to(Global.player_node.global_position) * delta * SPEED
+	animated_sprite_2d.flip_h = velocity.x > 0
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("Player"):

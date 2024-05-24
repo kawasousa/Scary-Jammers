@@ -9,6 +9,9 @@ func _ready():
 	Global.can_spawn_enemies = false
 
 func _process(delta):
+	if Global.game_win:
+		get_tree().change_scene_to_file("res://scenes/win_scene.tscn")
+
 	if Global.can_spawn_shoot_resources:
 		for tree in get_node("tree_group").get_children():
 			tree.position.y = tree.start_position.y + sin((Engine.get_frames_drawn() * delta * 2)) * 3

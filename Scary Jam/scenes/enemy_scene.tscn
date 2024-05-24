@@ -1,11 +1,49 @@
-[gd_scene load_steps=3 format=3 uid="uid://dut6mmgcxxyas"]
+[gd_scene load_steps=9 format=3 uid="uid://dut6mmgcxxyas"]
 
 [ext_resource type="Script" path="res://script/enemy_scene.gd" id="1_negh7"]
+[ext_resource type="Texture2D" uid="uid://brq7ymwmrpeyj" path="res://assets/Slime.01-idle.png" id="2_s3efi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5462s"]
 size = Vector2(40, 40)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xjfh"]
+atlas = ExtResource("2_s3efi")
+region = Rect2(0, 15, 48, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8wt3p"]
+atlas = ExtResource("2_s3efi")
+region = Rect2(48, 15, 48, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lqjv"]
+atlas = ExtResource("2_s3efi")
+region = Rect2(96, 15, 48, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nlr85"]
+atlas = ExtResource("2_s3efi")
+region = Rect2(144, 15, 48, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hfd8k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4xjfh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8wt3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1lqjv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nlr85")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
 [node name="enemy" type="CharacterBody2D"]
+disable_mode = 1
 motion_mode = 1
 script = ExtResource("1_negh7")
 
@@ -14,51 +52,12 @@ script = ExtResource("1_negh7")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_5462s")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-
-[node name="ColorRect2" type="ColorRect" parent="Sprite2D"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -8.5
-offset_top = -36.5
-offset_right = 11.5
-offset_bottom = 3.5
-grow_horizontal = 2
-grow_vertical = 2
-rotation = 0.785398
-color = Color(0.0823529, 0.160784, 0.407843, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="Sprite2D"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 39.5
-offset_top = -9.5
-offset_right = 59.5
-offset_bottom = 30.5
-grow_horizontal = 2
-grow_vertical = 2
-rotation = 2.35619
-color = Color(0.0823529, 0.160784, 0.407843, 1)
-
-[node name="ColorRect" type="ColorRect" parent="Sprite2D"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.239216, 0.396078, 0.105882, 1)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_hfd8k")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.821113
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

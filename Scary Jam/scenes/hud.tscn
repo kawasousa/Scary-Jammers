@@ -8,7 +8,7 @@
 script = ExtResource("1_fmoib")
 
 [node name="shoot" type="Node2D" parent="."]
-position = Vector2(424.129, 31.2599)
+position = Vector2(508.129, 31.2599)
 
 [node name="shoot_rect" type="ColorRect" parent="shoot"]
 custom_minimum_size = Vector2(0, 20)
@@ -50,7 +50,7 @@ text = "invasão da casa em:"
 metadata/_edit_use_anchors_ = true
 
 [node name="life" type="Node2D" parent="."]
-position = Vector2(205.129, 29.2599)
+position = Vector2(289.129, 29.2599)
 
 [node name="life_rect" type="ColorRect" parent="life"]
 custom_minimum_size = Vector2(0, 5)
@@ -124,4 +124,4 @@ offset_left = -0.0304565
 offset_top = -5.6059
 offset_right = 105.97
 offset_bottom = 16.3941
-text = "Hora: 00:00"
+text = "Tempo para o dia: 05:00"

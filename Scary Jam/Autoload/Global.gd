@@ -4,15 +4,16 @@ const ENEMY_SCENE = preload("res://scenes/enemy_scene.tscn")
 @onready var timer: Timer = $Timer
 var game_over: bool = false
 var game_win: bool = false
-var game_seconds: int = 0
-var game_minutes: int = 0
+var game_day: int
+var game_seconds: int
+var game_minutes: int
 var can_start_invasion_timer: bool = false
 var enemy_node
 var house_scene_node
 var outdoor_scene_node
 var hud_node
 var player_node
-var invasion_rect_factor: int = 0
+var invasion_rect_factor: int
 var player_position: Vector2 = Vector2(385, 540)
 var player_shooots: int
 var player_life: int
@@ -29,6 +30,7 @@ func _ready():
 	Input.set_custom_mouse_cursor(load("res://assets/UI_Flat_Select_02a1.png"))
 
 func _process(_delta):
+	day_to_win()
 	set_invasion_timer()
 	get_bullet()
 	spawn_enemy()
@@ -54,7 +56,7 @@ func set_invasion_timer() -> void:
 			game_over = true
 
 func spawn_enemy() -> void:
-	if can_spawn_enemies == true and get_tree().get_nodes_in_group("enemy").size() < 2:
+	if can_spawn_enemies == true and get_tree().get_nodes_in_group("enemy").size() < 2 * game_day:
 		for spawner in outdoor_scene_node.get_node("enemy_spawner").get_children():
 			var enemy = ENEMY_SCENE.instantiate()
 			enemy.global_position = spawner.global_position
@@ -77,22 +79,30 @@ func check_player_life() -> void:
 
 func reset_game_values() -> void:
 	game_win = false
+	game_over = false
 	game_seconds = 0
-	game_minutes = 0
+	game_minutes = 3
 	timer.stop()
 	player_position = Vector2(385, 540)
 	invasion_rect_factor = 0
 	can_start_invasion_timer = false
+	can_spawn_enemies = false
 	player_shoot_resource = 0
 	player_shooots = 0
 	player_life_resource = 0
 	player_life = 1
+	game_day = 1
 
 func _on_timer_timeout():
-	game_seconds += 1
-	print(game_seconds)
-	if game_seconds == 60:
+	if game_minutes == 0 and game_seconds == 0:
+		game_day += 1
+		game_minutes = 5
 		game_seconds = 0
-		game_minutes += 1
-	if game_minutes == 2:
+	if game_seconds == 0:
+		game_seconds = 59
+		game_minutes -= 1
+	game_seconds -= 1
+
+func day_to_win() -> void:
+	if game_day == 3:
 		game_win = true
