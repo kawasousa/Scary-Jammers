@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @onready var sprite = $sprite
-const SPEED = 30000
+const SPEED = 20000
 const SHOOT_SCENE = preload("res://scenes/shoot_scene.tscn")
 var can_move = true
 
@@ -20,23 +20,24 @@ func _physics_process(delta):
 
 ## Movimentação do jogador
 func movement(delta) -> void:
-	## movimento básico do player
-	
-	var directionX = Input.get_axis("ui_left", "ui_right")
-	if directionX > 0:
-		velocity.x = directionX * delta * SPEED
+	if Input.is_action_pressed("ui_left"):
+		velocity.x = delta * -SPEED
 		sprite.flip_h = false
-	elif directionX < 0:
-		velocity.x = directionX * delta * SPEED
+		sprite.play("walking_side")
+	elif Input.is_action_pressed("ui_right"):
+		velocity.x = delta * SPEED
 		sprite.flip_h = true
+		sprite.play("walking_side")
 	else:
 		velocity.x = 0
+		sprite.pause()
 	
-	var directionY = Input.get_axis("ui_up", "ui_down")
-	if directionY > 0:
-		velocity.y = directionY * delta * SPEED
-	elif directionY < 0:
-		velocity.y = directionY * delta * SPEED
+	if Input.is_action_pressed("ui_up"):
+		velocity.y = delta * -SPEED
+		sprite.play("walking_up")
+	elif Input.is_action_pressed("ui_down"):
+		velocity.y = delta * SPEED
+		sprite.play("walking_down")
 	else:
 		velocity.y = 0
 
