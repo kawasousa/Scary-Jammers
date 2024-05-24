@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Enemy
 
-const SPEED = 10000
+const SPEED = 9000
 const HEART_RESOURCE = preload("res://scenes/heart_resource.tscn")
 @onready var animated_sprite_2d = $AnimatedSprite2D
 
