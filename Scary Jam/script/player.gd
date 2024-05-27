@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @onready var sprite = $sprite
-const SPEED = 20000
+@export var speed = 20000
 const SHOOT_SCENE = preload("res://scenes/shoot_scene.tscn")
 var can_move = true
 
@@ -21,11 +21,11 @@ func _physics_process(delta):
 ## Movimentação do jogador
 func movement(delta) -> void:
 	if Input.is_action_pressed("ui_left"):
-		velocity.x = delta * -SPEED
+		velocity.x = delta * -speed
 		sprite.flip_h = false
 		sprite.play("walking_side")
 	elif Input.is_action_pressed("ui_right"):
-		velocity.x = delta * SPEED
+		velocity.x = delta * speed
 		sprite.flip_h = true
 		sprite.play("walking_side")
 	else:
@@ -33,21 +33,25 @@ func movement(delta) -> void:
 		sprite.pause()
 	
 	if Input.is_action_pressed("ui_up"):
-		velocity.y = delta * -SPEED
+		velocity.y = delta * -speed
 		sprite.play("walking_up")
 	elif Input.is_action_pressed("ui_down"):
-		velocity.y = delta * SPEED
+		velocity.y = delta * speed
 		sprite.play("walking_down")
 	else:
 		velocity.y = 0
 
 func shoot() -> void:
 	## tiros sendo adicionados através da criação de nós filhos 
-	if Input.is_action_just_pressed("shoot") and get_parent().name == "outdoor_scene" and Global.player_shooots > 0:
+	if Input.is_action_just_pressed("shoot"):
 		Input.set_custom_mouse_cursor(load("res://assets/UI_Flat_Select_02a3.png"))
-		var shoot_instance = SHOOT_SCENE.instantiate()
-		get_parent().get_node("shoot_group").add_child(shoot_instance)
-		shoot_instance.global_position = global_position
-		shoot_instance.look_at(get_global_mouse_position())
-		shoot_instance.add_to_group("shoots")
-		Global.player_shooots -= 1
+		if get_parent().name == "outdoor_scene" and Global.player_shooots > 0:
+			Input.set_custom_mouse_cursor(load("res://assets/UI_Flat_Select_02a3.png"))
+			var shoot_instance = SHOOT_SCENE.instantiate()
+			get_parent().get_node("shoot_group").add_child(shoot_instance)
+			shoot_instance.global_position = global_position
+			shoot_instance.look_at(get_global_mouse_position())
+			shoot_instance.add_to_group("shoots")
+			Global.player_shooots -= 1
+		await  get_tree().create_timer(0.05).timeout
+		Input.set_custom_mouse_cursor(load("res://assets/UI_Flat_Select_02a1.png"))

@@ -771,11 +771,6 @@ sources/2 = SubResource("TileSetAtlasSource_oei3m")
 [node name="outdoor_scene" type="Node2D"]
 script = ExtResource("1_dmdnm")
 
-[node name="passage_area2" parent="." instance=ExtResource("3_x1hyl")]
-position = Vector2(252, 638)
-target_area = "res://scenes/florest_scene.tscn"
-player_position = Vector2(160, 130)
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_u5exk")
 format = 2
@@ -790,60 +785,66 @@ layer_3/tile_data = PackedInt32Array(2359315, 0, 5, 2424851, 0, 6, 2490387, 0, 7
 layer_4/name = "front"
 layer_4/tile_data = PackedInt32Array(2490387, 0, 5, 2555923, 0, 6, 2621459, 0, 7, 2490388, 65536, 5, 2555924, 65536, 6, 2621460, 65536, 7, 2490389, 131072, 5, 2555925, 131072, 6, 2621461, 131072, 7, 2490390, 0, 5, 2555926, 0, 6, 2621462, 0, 7, 2490391, 65536, 5, 2555927, 65536, 6, 2621463, 65536, 7, 2490392, 131072, 5, 2555928, 131072, 6, 2621464, 131072, 7, 2490393, 0, 5, 2555929, 0, 6, 2621465, 0, 7, 2490394, 65536, 5, 2555930, 65536, 6, 2621466, 65536, 7, 2490395, 131072, 5, 2555931, 131072, 6, 2621467, 131072, 7, 2490396, 0, 5, 2555932, 0, 6, 2621468, 0, 7, 2490397, 65536, 5, 2555933, 65536, 6, 2621469, 65536, 7, 2490398, 131072, 5, 2555934, 131072, 6, 2621470, 131072, 7, 2490399, 0, 5, 2555935, 0, 6, 2621471, 0, 7, 2490400, 65536, 5, 2555936, 65536, 6, 2621472, 65536, 7, 2490401, 131072, 5, 2555937, 131072, 6, 2621473, 131072, 7, 2490402, 0, 5, 2555938, 0, 6, 2621474, 0, 7, 2490403, 65536, 5, 2555939, 65536, 6, 2621475, 65536, 7, 2490404, 131072, 5, 2555940, 131072, 6, 2621476, 131072, 7, 2490405, 0, 5, 2555941, 0, 6, 2621477, 0, 7, 2490406, 65536, 5, 2555942, 65536, 6, 2621478, 65536, 7, 2490407, 131072, 5, 2555943, 131072, 6, 2621479, 131072, 7, 2490408, 0, 5, 2555944, 0, 6, 2621480, 0, 7, 2490409, 65536, 5, 2555945, 65536, 6, 2621481, 65536, 7, 2490410, 131072, 5, 2555946, 131072, 6, 2621482, 131072, 7, 2490411, 0, 5, 2555947, 0, 6, 2621483, 0, 7, 2490412, 65536, 5, 2555948, 65536, 6, 2621484, 65536, 7, 2490413, 131072, 5, 2555949, 131072, 6, 2621485, 131072, 7, 2490414, 0, 5, 2555950, 0, 6, 2621486, 0, 7, 2490415, 65536, 5, 2555951, 65536, 6, 2621487, 65536, 7, 2490416, 131072, 5, 2555952, 131072, 6, 2621488, 131072, 7, 2490417, 0, 5, 2555953, 0, 6, 2621489, 0, 7, 2490418, 65536, 5, 2555954, 65536, 6, 2621490, 65536, 7, 2490419, 131072, 5, 2555955, 131072, 6, 2621491, 131072, 7, 2490420, 0, 5, 2555956, 0, 6, 2621492, 0, 7, 2490421, 65536, 5, 2555957, 65536, 6, 2621493, 65536, 7, 2490422, 131072, 5, 2555958, 131072, 6, 2621494, 131072, 7, 2490423, 0, 5, 2555959, 0, 6, 2621495, 0, 7, 2490424, 65536, 5, 2555960, 65536, 6, 2621496, 65536, 7, 2490425, 131072, 5, 2555961, 131072, 6, 2621497, 131072, 7, 2490426, 0, 5, 2555962, 0, 6, 2621498, 0, 7, 2490427, 65536, 5, 2555963, 65536, 6, 2621499, 65536, 7, 2490428, 131072, 5, 2555964, 131072, 6, 2621500, 131072, 7, 2490429, 0, 5, 2555965, 0, 6, 2621501, 0, 7, 2490430, 65536, 5, 2555966, 65536, 6, 2621502, 65536, 7, 2490431, 131072, 5, 2555967, 131072, 6, 2621503, 131072, 7, 2490432, 0, 5, 2555968, 0, 6, 2621504, 0, 7, 2490433, 65536, 5, 2555969, 65536, 6, 2621505, 65536, 7, 2490434, 131072, 5, 2555970, 131072, 6, 2621506, 131072, 7, 2490435, 0, 5, 2555971, 0, 6, 2621507, 0, 7, 2490436, 65536, 5, 2555972, 65536, 6, 2621508, 65536, 7, 2490437, 131072, 5, 2555973, 131072, 6, 2621509, 131072, 7, 2490438, 0, 5, 2555974, 0, 6, 2621510, 0, 7, 2490439, 65536, 5, 2555975, 65536, 6, 2621511, 65536, 7, 2555904, 131072, 5, 2621440, 131072, 6, 2555905, 0, 5, 2621441, 0, 6, 2555906, 65536, 5, 2621442, 65536, 6, 2555907, 131072, 5, 2621443, 131072, 6, 2555908, 0, 5, 2621444, 0, 6, 2555909, 65536, 5, 2621445, 65536, 6, 2555910, 131072, 5, 2621446, 131072, 6, 2555911, 0, 5, 2621447, 0, 6, 2555912, 65536, 5, 2621448, 65536, 6, 2555913, 131072, 5, 2621449, 131072, 6, 2555914, 0, 5, 2621450, 0, 6, 2555915, 65536, 5, 2621451, 65536, 6, 2555916, 131072, 5, 2621452, 131072, 6)
 
-[node name="House" type="Sprite2D" parent="TileMap"]
+[node name="StaticBody2D" type="StaticBody2D" parent="TileMap"]
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap/StaticBody2D"]
+polygon = PackedVector2Array(202, 654, 201, 627, 46, 621, 45, 411, 31, 393, 26, 78, 1123, 79, 1125, 110, 1148, 112, 1165, 112, 1172, 312, 1149, 318, 1107, 319, 1108, 606, 324, 601, 324, 656, 1150, 658, 1152.6, 315.504, 1175, 317, 1171, 112, 1153, 110, 1155, -1, 1, -6, 1, 657)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="TileMap/StaticBody2D"]
+polygon = PackedVector2Array(155, 315, 190, 315, 198, 306, 250, 305, 252, 313, 341, 314, 342, 194, 155, 191)
+
+[node name="passage_area2" parent="TileMap" instance=ExtResource("3_x1hyl")]
+position = Vector2(262, 649)
+scale = Vector2(1.54844, 1.56019)
+target_area = "res://scenes/florest_scene.tscn"
+player_position = Vector2(160, 130)
+
+[node name="passage_area" parent="TileMap" instance=ExtResource("3_x1hyl")]
+position = Vector2(220, 308)
+scale = Vector2(0.861757, -1.51231)
+target_area = "res://scenes/house_scene.tscn"
+player_position = Vector2(385, 540)
+
+[node name="enemy_group" type="Node2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("1_r2x21")]
+position = Vector2(220, 340)
+scale = Vector2(0.6, 0.6)
+
+[node name="House" type="Sprite2D" parent="."]
 position = Vector2(252, 170)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_0h8rk")
 region_enabled = true
 region_rect = Rect2(244, 7.70002, 140, 192.3)
 
-[node name="filter_rect" type="ColorRect" parent="TileMap"]
+[node name="filter_rect" type="ColorRect" parent="."]
 offset_right = 1152.0
 offset_bottom = 659.0
 color = Color(0.054902, 0.0352941, 0.160784, 0.529412)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="TileMap"]
-collision_layer = 5
-collision_mask = 5
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap/StaticBody2D"]
-polygon = PackedVector2Array(202, 654, 201, 627, 46, 621, 45, 411, 31, 393, 26, 78, 1123, 79, 1125, 110, 1148, 112, 1149, 318, 1107, 319, 1108, 606, 324, 601, 324, 656, 1150, 658, 1155, -1, 1, -6, 1, 657)
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="TileMap/StaticBody2D"]
-polygon = PackedVector2Array(155, 315, 184, 312, 185, 267, 261, 269, 262, 310, 341, 314, 342, 194, 155, 191)
-
-[node name="passage_area" parent="TileMap" instance=ExtResource("3_x1hyl")]
-position = Vector2(220, 308)
-scale = Vector2(0.544174, 0.915011)
-target_area = "res://scenes/house_scene.tscn"
-player_position = Vector2(385, 540)
-
-[node name="Player" parent="." instance=ExtResource("1_r2x21")]
-position = Vector2(220, 340)
-scale = Vector2(0.6, 0.6)
-
 [node name="Canvas" type="Node2D" parent="."]
-
-[node name="pause_menu" parent="Canvas" instance=ExtResource("3_o8oqm")]
-visible = false
 
 [node name="HUD" parent="Canvas" instance=ExtResource("4_vod8v")]
 
 [node name="game_over_screen" parent="Canvas" instance=ExtResource("5_8pj85")]
 
+[node name="pause_menu" parent="Canvas" instance=ExtResource("3_o8oqm")]
+visible = false
+
 [node name="enemy_spawner" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="enemy_spawner"]
-position = Vector2(1202, 267)
+position = Vector2(1163, 227)
 
 [node name="Marker2D2" type="Marker2D" parent="enemy_spawner"]
 position = Vector2(253, 713)
-
-[node name="enemy_group" type="Node2D" parent="."]
 
 [node name="shoot_group" type="Node2D" parent="."]
 
 [node name="resources" type="Node2D" parent="."]
 
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
-[connection signal="body_entered" from="passage_area2" to="." method="_on_passage_area_2_body_entered"]
+[connection signal="body_entered" from="TileMap/passage_area2" to="." method="_on_passage_area_2_body_entered"]

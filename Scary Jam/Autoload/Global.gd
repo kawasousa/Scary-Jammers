@@ -4,7 +4,7 @@ const ENEMY_SCENE = preload("res://scenes/enemy_scene.tscn")
 @onready var timer: Timer = $Timer
 var game_over: bool = false
 var game_win: bool = false
-var max_game_days: int = 5
+var max_game_days: int = 3
 var game_day: int 
 var game_seconds: int
 var game_minutes: int
@@ -61,12 +61,13 @@ func set_invasion_timer() -> void:
 		invasion_rect_factor = 0
 
 func spawn_enemy() -> void:
-	if can_spawn_enemies == true and get_tree().get_nodes_in_group("enemy").size() < ((max_game_days - game_day) + 1) * 2:
-		for spawner in outdoor_scene_node.get_node("enemy_spawner").get_children():
-			var enemy = ENEMY_SCENE.instantiate()
-			enemy.global_position = spawner.global_position
-			outdoor_scene_node.get_node("enemy_group").add_child(enemy)
-			enemy.add_to_group("enemy")
+	if can_spawn_enemies == true:
+		if get_tree().get_nodes_in_group("enemy").size() < ((max_game_days - game_day) + 1) * 2:
+			for spawner in outdoor_scene_node.get_node("enemy_spawner").get_children():
+				var enemy = ENEMY_SCENE.instantiate()
+				enemy.global_position = spawner.global_position
+				outdoor_scene_node.get_node("enemy_group").add_child(enemy)
+				enemy.add_to_group("enemy")
 
 func reduce_player_life() -> void:
 	player_life -= 1

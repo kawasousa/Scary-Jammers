@@ -152,7 +152,7 @@ script = ExtResource("1_82tuw")
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_ys4f5")
-animation = &"walking_up"
+animation = &"walking_down"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0

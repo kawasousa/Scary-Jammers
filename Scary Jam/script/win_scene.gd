@@ -5,6 +5,7 @@ extends Node2D
 
 
 func _ready():
+	Global.can_spawn_enemies = false
 	animation_player.play("win_animation")
 	await animation_player.animation_finished
 	button.grab_focus()

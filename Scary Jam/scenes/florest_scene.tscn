@@ -391,21 +391,21 @@ position = Vector2(264, 504)
 [node name="Marker2D12" type="Marker2D" parent="tree_spawn_markers"]
 position = Vector2(128, 440)
 
+[node name="filter_rect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 640.0
+color = Color(0.054902, 0.0352941, 0.160784, 0.529412)
+
 [node name="tree_group" type="Node2D" parent="."]
 
 [node name="Canvas" type="Node2D" parent="."]
 
 [node name="HUD" parent="Canvas" instance=ExtResource("3_e0pml")]
 
-[node name="pause_menu" parent="Canvas" instance=ExtResource("4_ema30")]
-visible = false
-
 [node name="game_over_screen" parent="Canvas" instance=ExtResource("6_3gcfr")]
 
-[node name="filter_rect" type="ColorRect" parent="Canvas"]
-offset_right = 1152.0
-offset_bottom = 640.0
-color = Color(0.054902, 0.0352941, 0.160784, 0.529412)
+[node name="pause_menu" parent="Canvas" instance=ExtResource("4_ema30")]
+visible = false
 
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
 [connection signal="body_entered" from="TileMap/passage_area" to="." method="_on_passage_area_body_entered"]

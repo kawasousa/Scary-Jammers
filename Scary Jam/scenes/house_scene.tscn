@@ -5,11 +5,228 @@
 [ext_resource type="PackedScene" uid="uid://buwo4i7mxxfv3" path="res://scenes/hud.tscn" id="2_864eu"]
 [ext_resource type="PackedScene" uid="uid://cmkyt4hcorr3y" path="res://scenes/player.tscn" id="2_cnpi6"]
 [ext_resource type="PackedScene" uid="uid://dntwuhklfyvp2" path="res://scenes/passage_area.tscn" id="2_nqlps"]
-[ext_resource type="Texture2D" uid="uid://nsbwhtdjwvqp" path="res://assets/stick.png" id="3_dalu6"]
-[ext_resource type="Texture2D" uid="uid://c3lrqlwc65vgy" path="res://assets/gun.png" id="4_75172"]
-[ext_resource type="Texture2D" uid="uid://b2mm1qi1tj3sh" path="res://assets/life_icon.png" id="5_pgasn"]
+[ext_resource type="Texture2D" uid="uid://dn676eebr2qdd" path="res://assets/tiledemo.png" id="3_cttek"]
 [ext_resource type="PackedScene" uid="uid://btm5fg74xn1qh" path="res://scenes/game_over_screen.tscn" id="6_s5mbg"]
 [ext_resource type="PackedScene" uid="uid://cuwvdickdojxe" path="res://scenes/inventory.tscn" id="7_rk743"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cok8v"]
+texture = ExtResource("3_cttek")
+16:1/0 = 0
+17:1/0 = 0
+18:1/0 = 0
+19:1/0 = 0
+20:1/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+18:2/0 = 0
+19:2/0 = 0
+20:2/0 = 0
+21:2/0 = 0
+22:2/0 = 0
+23:2/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+16:3/0 = 0
+17:3/0 = 0
+18:3/0 = 0
+19:3/0 = 0
+20:3/0 = 0
+21:3/0 = 0
+22:3/0 = 0
+23:3/0 = 0
+24:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+16:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+19:4/0 = 0
+20:4/0 = 0
+21:4/0 = 0
+22:4/0 = 0
+23:4/0 = 0
+24:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+10:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+16:5/0 = 0
+17:5/0 = 0
+18:5/0 = 0
+19:5/0 = 0
+20:5/0 = 0
+21:5/0 = 0
+22:5/0 = 0
+23:5/0 = 0
+24:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+16:6/0 = 0
+17:6/0 = 0
+18:6/0 = 0
+19:6/0 = 0
+20:6/0 = 0
+21:6/0 = 0
+22:6/0 = 0
+23:6/0 = 0
+24:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+13:7/0 = 0
+14:7/0 = 0
+15:7/0 = 0
+16:7/0 = 0
+17:7/0 = 0
+18:7/0 = 0
+19:7/0 = 0
+20:7/0 = 0
+21:7/0 = 0
+22:7/0 = 0
+23:7/0 = 0
+24:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+15:8/0 = 0
+16:8/0 = 0
+17:8/0 = 0
+18:8/0 = 0
+19:8/0 = 0
+20:8/0 = 0
+21:8/0 = 0
+22:8/0 = 0
+23:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+6:9/0 = 0
+14:9/0 = 0
+15:9/0 = 0
+16:9/0 = 0
+17:9/0 = 0
+18:9/0 = 0
+19:9/0 = 0
+20:9/0 = 0
+21:9/0 = 0
+22:9/0 = 0
+23:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+15:10/0 = 0
+16:10/0 = 0
+17:10/0 = 0
+18:10/0 = 0
+19:10/0 = 0
+20:10/0 = 0
+21:10/0 = 0
+5:13/0 = 0
+6:13/0 = 0
+7:13/0 = 0
+8:13/0 = 0
+9:13/0 = 0
+10:13/0 = 0
+11:13/0 = 0
+12:13/0 = 0
+5:14/0 = 0
+6:14/0 = 0
+7:14/0 = 0
+8:14/0 = 0
+9:14/0 = 0
+10:14/0 = 0
+11:14/0 = 0
+12:14/0 = 0
+5:15/0 = 0
+6:15/0 = 0
+7:15/0 = 0
+8:15/0 = 0
+9:15/0 = 0
+10:15/0 = 0
+11:15/0 = 0
+12:15/0 = 0
+5:16/0 = 0
+6:16/0 = 0
+7:16/0 = 0
+8:16/0 = 0
+9:16/0 = 0
+10:16/0 = 0
+11:16/0 = 0
+5:17/0 = 0
+6:17/0 = 0
+7:17/0 = 0
+8:17/0 = 0
+9:17/0 = 0
+10:17/0 = 0
+11:17/0 = 0
+5:18/0 = 0
+6:18/0 = 0
+7:18/0 = 0
+8:18/0 = 0
+9:18/0 = 0
+10:18/0 = 0
+11:18/0 = 0
+5:19/0 = 0
+6:19/0 = 0
+7:19/0 = 0
+8:19/0 = 0
+9:19/0 = 0
+10:19/0 = 0
+11:19/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ldprc"]
+sources/0 = SubResource("TileSetAtlasSource_cok8v")
 
 [node name="house" type="Node2D"]
 script = ExtResource("1_781us")
@@ -19,179 +236,43 @@ position = Vector2(378, 635)
 target_area = "res://scenes/outdoor_scene.tscn"
 player_position = Vector2(220, 340)
 
-[node name="scenario_placeholder" type="Node2D" parent="."]
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(4, 4)
+tile_set = SubResource("TileSet_ldprc")
+format = 2
+layer_0/name = "floor"
+layer_0/tile_data = PackedInt32Array(65537, 196608, 8, 131073, 196608, 8, 196609, 196608, 8, 262145, 196608, 8, 327681, 196608, 8, 393217, 196608, 8, 458753, 196608, 8, 524289, 196608, 8, 65538, 196608, 8, 131074, 196608, 8, 196610, 196608, 8, 262146, 196608, 8, 327682, 196608, 8, 393218, 196608, 8, 458754, 196608, 8, 524290, 196608, 8, 65539, 196608, 8, 131075, 196608, 8, 196611, 196608, 8, 262147, 196608, 8, 327683, 196608, 8, 393219, 196608, 8, 458755, 196608, 8, 524291, 196608, 8, 65540, 196608, 8, 131076, 196608, 8, 196612, 196608, 8, 262148, 196608, 8, 327684, 196608, 8, 393220, 196608, 8, 458756, 196608, 8, 524292, 196608, 8, 65541, 196608, 8, 131077, 196608, 8, 196613, 196608, 8, 262149, 196608, 8, 327685, 196608, 8, 393221, 196608, 8, 458757, 196608, 8, 524293, 196608, 8, 65542, 196608, 8, 131078, 196608, 8, 196614, 196608, 8, 262150, 196608, 8, 327686, 196608, 8, 393222, 196608, 8, 458758, 196608, 8, 524294, 196608, 8, 65543, 196608, 8, 131079, 196608, 8, 196615, 196608, 8, 262151, 196608, 8, 327687, 196608, 8, 393223, 196608, 8, 458759, 196608, 8, 524295, 196608, 8, 65544, 196608, 8, 131080, 196608, 8, 196616, 196608, 8, 262152, 196608, 8, 327688, 196608, 8, 393224, 196608, 8, 458760, 196608, 8, 524296, 196608, 8, 65545, 196608, 8, 131081, 196608, 8, 196617, 196608, 8, 262153, 196608, 8, 327689, 196608, 8, 393225, 196608, 8, 458761, 196608, 8, 524297, 196608, 8, 65546, 196608, 8, 131082, 196608, 8, 196618, 196608, 8, 262154, 196608, 8, 327690, 196608, 8, 393226, 196608, 8, 458762, 196608, 8, 524298, 196608, 8, 65547, 196608, 8, 131083, 196608, 8, 196619, 196608, 8, 262155, 196608, 8, 327691, 196608, 8, 393227, 196608, 8, 458763, 196608, 8, 524299, 196608, 8, 65548, 196608, 8, 131084, 196608, 8, 196620, 196608, 8, 262156, 196608, 8, 327692, 196608, 8, 393228, 196608, 8, 458764, 196608, 8, 524300, 196608, 8, 65549, 196608, 8, 131085, 196608, 8, 196621, 196608, 8, 262157, 196608, 8, 327693, 196608, 8, 393229, 196608, 8, 458765, 196608, 8, 524301, 196608, 8, 65550, 196608, 8, 131086, 196608, 8, 196622, 196608, 8, 262158, 196608, 8, 327694, 196608, 8, 393230, 196608, 8, 458766, 196608, 8, 524302, 196608, 8, 65551, 196608, 8, 131087, 196608, 8, 196623, 196608, 8, 262159, 196608, 8, 327695, 196608, 8, 393231, 196608, 8, 458767, 196608, 8, 524303, 196608, 8, 65552, 196608, 8, 131088, 196608, 8, 196624, 196608, 8, 262160, 196608, 8, 327696, 196608, 8, 393232, 196608, 8, 458768, 196608, 8, 524304, 196608, 8, 589830, 196608, 8, 589829, 196608, 8, 655365, 196608, 8, 655366, 196608, 8)
+layer_1/name = "wall"
+layer_1/tile_data = PackedInt32Array(0, 524288, 4, 1, 589824, 4, 589824, 524288, 6, 589825, 589824, 6, 589840, 589824, 6, 589841, 655360, 6, 16, 589824, 4, 17, 655360, 4, 65553, 655360, 5, 131089, 655360, 5, 196625, 655360, 5, 262161, 655360, 5, 327697, 655360, 5, 393233, 655360, 5, 458769, 655360, 5, 524305, 655360, 5, 65536, 524288, 5, 131072, 524288, 5, 196608, 524288, 5, 262144, 524288, 5, 327680, 524288, 5, 393216, 524288, 5, 458752, 524288, 5, 524288, 524288, 5, 589826, 589824, 6, 589827, 589824, 6, 589828, 589824, 6, 589831, 589824, 6, 589832, 589824, 6, 589833, 589824, 6, 589834, 589824, 6, 589835, 589824, 6, 589836, 589824, 6, 589837, 589824, 6, 589838, 589824, 6, 589839, 589824, 6, 2, 589824, 4, 3, 589824, 4, 4, 589824, 4, 5, 589824, 4, 6, 589824, 4, 7, 589824, 4, 8, 589824, 4, 9, 589824, 4, 10, 589824, 4, 11, 589824, 4, 12, 589824, 4, 13, 589824, 4, 14, 589824, 4, 15, 589824, 4, 524303, 196608, 7)
+layer_2/name = "decorations"
+layer_2/tile_data = PackedInt32Array(131081, 0, 9, 196617, 0, 10, 196618, 65536, 10, 65547, 131072, 9, 131083, 131072, 10, 131082, 65536, 9, 589830, 393216, 536870921, 589829, 393216, 536870921, 655366, 393216, 9, 655365, 393216, 9)
 
-[node name="background" type="ColorRect" parent="scenario_placeholder"]
-offset_right = 1152.0
-offset_bottom = 648.0
-color = Color(0.113725, 0.105882, 0.0156863, 1)
-
-[node name="prateleira" type="ColorRect" parent="scenario_placeholder"]
-offset_left = 40.0
-offset_top = 448.0
-offset_right = 88.0
-offset_bottom = 632.0
-color = Color(0.701961, 0.443137, 0.188235, 1)
-
-[node name="prateleira2" type="ColorRect" parent="scenario_placeholder"]
-offset_left = 1064.0
-offset_top = 448.0
-offset_right = 1112.0
-offset_bottom = 632.0
-color = Color(0.701961, 0.443137, 0.188235, 1)
-
-[node name="balcao" type="ColorRect" parent="scenario_placeholder"]
-offset_left = 40.0
-offset_top = 384.0
-offset_right = 320.0
-offset_bottom = 448.0
-color = Color(0.87451, 0.580392, 0.305882, 1)
-
-[node name="balcao2" type="ColorRect" parent="scenario_placeholder"]
-offset_left = 448.0
-offset_top = 384.0
-offset_right = 1112.0
-offset_bottom = 448.0
-color = Color(0.819608, 0.529412, 0.254902, 1)
-
-[node name="mesa_central" type="ColorRect" parent="scenario_placeholder"]
-offset_left = 440.0
-offset_top = 112.0
-offset_right = 736.0
-offset_bottom = 288.0
-color = Color(0.784314, 0.392157, 0.27451, 1)
-
-[node name="fornalha" type="ColorRect" parent="scenario_placeholder"]
-offset_left = 40.0
-offset_top = 32.0
-offset_right = 168.0
-offset_bottom = 280.0
-color = Color(0.478431, 0.45098, 0.45098, 1)
-
-[node name="bigorna" type="ColorRect" parent="scenario_placeholder"]
-offset_left = 48.0
-offset_top = 296.0
-offset_right = 104.0
-offset_bottom = 368.0
-color = Color(0.4, 0.313726, 0.317647, 1)
-
-[node name="bau" type="ColorRect" parent="scenario_placeholder"]
-offset_left = 1040.0
-offset_top = 96.0
-offset_right = 1112.0
-offset_bottom = 272.0
-color = Color(0.431373, 0.286275, 0.129412, 1)
-
-[node name="table_scenario" type="Node2D" parent="scenario_placeholder"]
-
-[node name="Stick" type="Sprite2D" parent="scenario_placeholder/table_scenario"]
-position = Vector2(482, 134)
-rotation = -0.23911
-texture = ExtResource("3_dalu6")
-
-[node name="Stick2" type="Sprite2D" parent="scenario_placeholder/table_scenario"]
-position = Vector2(471, 136)
-texture = ExtResource("3_dalu6")
-
-[node name="Stick3" type="Sprite2D" parent="scenario_placeholder/table_scenario"]
-position = Vector2(688, 135)
-texture = ExtResource("3_dalu6")
-
-[node name="Stick4" type="Sprite2D" parent="scenario_placeholder/table_scenario"]
-position = Vector2(707, 176)
-rotation = -1.55509
-texture = ExtResource("3_dalu6")
-
-[node name="Stick5" type="Sprite2D" parent="scenario_placeholder/table_scenario"]
-position = Vector2(614, 133)
-rotation = -2.63196
-texture = ExtResource("3_dalu6")
-
-[node name="Gun" type="Sprite2D" parent="scenario_placeholder/table_scenario"]
-modulate = Color(0.313496, 0.465752, 0.235155, 1)
-position = Vector2(678, 271)
-rotation = 0.673697
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_75172")
-
-[node name="LifeIcon" type="Sprite2D" parent="scenario_placeholder/table_scenario"]
-position = Vector2(496, 272)
-scale = Vector2(0.4375, 0.435484)
-texture = ExtResource("5_pgasn")
-
-[node name="LifeIcon2" type="Sprite2D" parent="scenario_placeholder/table_scenario"]
-position = Vector2(502, 270.75)
-scale = Vector2(0.4375, 0.435484)
-texture = ExtResource("5_pgasn")
-
-[node name="LifeIcon3" type="Sprite2D" parent="scenario_placeholder/table_scenario"]
-position = Vector2(503, 276.75)
-scale = Vector2(0.4375, 0.435484)
-texture = ExtResource("5_pgasn")
-
-[node name="Stick6" type="Sprite2D" parent="scenario_placeholder/table_scenario"]
-position = Vector2(518, 181)
-rotation = -0.23911
-texture = ExtResource("3_dalu6")
-
-[node name="paredes" type="Node2D" parent="scenario_placeholder"]
-
-[node name="ColorRect" type="ColorRect" parent="scenario_placeholder/paredes"]
-offset_right = 40.0
-offset_bottom = 648.0
-color = Color(0.301961, 0.219608, 0.172549, 0.996078)
-
-[node name="ColorRect2" type="ColorRect" parent="scenario_placeholder/paredes"]
-offset_left = 1112.0
-offset_right = 1152.0
-offset_bottom = 648.0
-color = Color(0.301961, 0.219608, 0.172549, 0.996078)
-
-[node name="ColorRect4" type="ColorRect" parent="scenario_placeholder/paredes"]
-offset_right = 1144.0
-offset_bottom = 16.0
-color = Color(0.301961, 0.219608, 0.172549, 0.996078)
-
-[node name="ColorRect3" type="ColorRect" parent="scenario_placeholder/paredes"]
-offset_left = 464.0
-offset_top = 632.0
-offset_right = 1152.0
-offset_bottom = 648.0
-color = Color(0.301961, 0.219608, 0.172549, 0.996078)
-
-[node name="ColorRect5" type="ColorRect" parent="scenario_placeholder/paredes"]
-offset_top = 632.0
-offset_right = 304.0
-offset_bottom = 648.0
-color = Color(0.301961, 0.219608, 0.172549, 0.996078)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="scenario_placeholder"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="scenario_placeholder/StaticBody2D"]
-polygon = PackedVector2Array(304, 648, 305, 630, 88, 632, 88, 449, 322, 450, 320, 384, 102, 383, 105, 279, 169, 279, 169, 17, 1113, 19, 1111, 95, 1040, 99, 1039, 273, 1109, 272, 1110, 382, 445, 383, 447, 449, 1060, 449, 1060, 631, 466, 630, 467, 646, 1155, 648, 1149, -2, 2, 1, -2, 647)
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="scenario_placeholder/StaticBody2D"]
-polygon = PackedVector2Array(441, 112, 440, 289, 736, 289, 735, 112)
+[node name="filter_rect" type="ColorRect" parent="TileMap"]
+offset_right = 288.0
+offset_bottom = 162.0
+color = Color(0.054902, 0.0352941, 0.160784, 0.529412)
 
 [node name="Player" parent="." instance=ExtResource("2_cnpi6")]
 position = Vector2(385, 540)
+scale = Vector2(1.5, 1.5)
+speed = 33000
 
-[node name="Canvas" type="Node" parent="."]
+[node name="Canvas" type="Node2D" parent="."]
 
 [node name="HUD" parent="Canvas" instance=ExtResource("2_864eu")]
 
 [node name="game_over_screen" parent="Canvas" instance=ExtResource("6_s5mbg")]
-visible = false
 message = "Os Jammer invadiram a casa"
 
 [node name="pause_menu" parent="Canvas" instance=ExtResource("1_viooo")]
 visible = false
 
 [node name="inventory" parent="." instance=ExtResource("7_rk743")]
-offset_left = 588.0
-offset_top = 211.0
-offset_right = 588.0
-offset_bottom = 211.0
+offset_left = 640.0
+offset_top = 200.0
+offset_right = 640.0
+offset_bottom = 200.0
+scale = Vector2(0.733521, 0.944238)
 
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
 [connection signal="body_entered" from="passage_area" to="." method="_on_passage_area_body_entered"]

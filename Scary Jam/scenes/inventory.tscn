@@ -46,10 +46,10 @@ script = ExtResource("1_y52ir")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = -148.0
-offset_top = -100.0
-offset_right = 148.0
-offset_bottom = 77.0
+offset_left = -80.0
+offset_top = -72.0
+offset_right = 80.0
+offset_bottom = 24.0
 color = Color(0.247059, 0.247059, 0.247059, 0.670588)
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -117,7 +117,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="pressed" from="Area2D/VBoxContainer/HBoxContainer/plus_life" to="." method="_on_life_pressed"]
 [connection signal="pressed" from="Area2D/VBoxContainer/HBoxContainer/plus_life" to="." method="_on_plus_life_pressed"]
-[connection signal="pressed" from="Area2D/VBoxContainer/HBoxContainer/plus_shoot" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Area2D/VBoxContainer/HBoxContainer/plus_life" to="." method="_on_life_pressed"]
 [connection signal="pressed" from="Area2D/VBoxContainer/HBoxContainer/plus_shoot" to="." method="_on_plus_shoot_pressed"]
+[connection signal="pressed" from="Area2D/VBoxContainer/HBoxContainer/plus_shoot" to="." method="_on_button_pressed"]

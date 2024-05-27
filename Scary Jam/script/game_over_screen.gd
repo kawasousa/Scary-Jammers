@@ -15,6 +15,7 @@ func _process(delta):
 	set_label_message()
 	if Global.game_over:
 		show()
+		get_parent().get_node("pause_menu").hide()
 		get_tree().paused = true
 		animation_player.play("game_over")
 		await get_tree().create_timer(2).timeout

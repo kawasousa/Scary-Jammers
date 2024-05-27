@@ -11,11 +11,11 @@ script = ExtResource("1_fmoib")
 position = Vector2(508.129, 31.2599)
 
 [node name="shoot_rect" type="ColorRect" parent="shoot"]
-custom_minimum_size = Vector2(0, 20)
+custom_minimum_size = Vector2(10, 24)
 offset_left = 40.0
-offset_top = 10.0
+offset_top = 7.0
 offset_right = 40.0
-offset_bottom = 30.0
+offset_bottom = 31.0
 color = Color(0.619608, 0.494118, 0.223529, 1)
 
 [node name="TextureRect" type="TextureRect" parent="shoot"]
@@ -27,8 +27,13 @@ rotation = -0.349066
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("2_k5cx3")
 
+[node name="Line2D" type="Line2D" parent="shoot"]
+points = PackedVector2Array(39.871, 6.7401, 39.871, 30.7401, 139.871, 30.7401, 139.871, 6.7401, 129.871, 6.7401, 129.871, 30.7401, 129.871, 30.7401, 129.871, 6.7401, 119.871, 6.7401, 119.871, 30.7401, 119.871, 30.7401, 119.871, 6.7401, 109.871, 6.7401, 109.871, 30.7401, 109.871, 30.7401, 109.871, 6.7401, 99.871, 6.7401, 99.871, 30.7401, 99.871, 6.7401, 89.871, 6.7401, 89.871, 30.7401, 89.871, 6.7401, 79.871, 6.7401, 79.871, 30.7401, 79.871, 6.7401, 69.871, 6.7401, 69.871, 30.7401, 69.871, 6.7401, 59.871, 6.7401, 59.871, 30.7401, 59.871, 6.7401, 49.871, 6.7401, 49.871, 30.7401, 49.871, 6.7401, 39.871, 6.7401)
+width = 2.0
+default_color = Color(0, 0, 0, 1)
+
 [node name="invasion" type="Node2D" parent="."]
-position = Vector2(713, 594)
+position = Vector2(463, 594)
 
 [node name="invasion_rect" type="ColorRect" parent="invasion"]
 offset_left = 185.0
@@ -53,10 +58,9 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(289.129, 29.2599)
 
 [node name="life_rect" type="ColorRect" parent="life"]
-custom_minimum_size = Vector2(0, 5)
 offset_left = 36.0
 offset_top = 8.0
-offset_right = 36.0
+offset_right = 186.0
 offset_bottom = 32.0
 color = Color(0.709804, 0.0588235, 0.0588235, 1)
 
@@ -65,6 +69,11 @@ custom_minimum_size = Vector2(40, 40)
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("2_00x5p")
+
+[node name="Line2D" type="Line2D" parent="life"]
+points = PackedVector2Array(35.871, 7.7401, 65.871, 7.7401, 65.871, 31.7401, 95.871, 31.7401, 95.871, 7.7401, 125.871, 7.7401, 125.871, 31.7401, 154.871, 31.7401, 154.871, 7.7401, 185.871, 7.7401, 185.871, 31.7401, 154.871, 31.7401, 154.871, 7.7401, 125.871, 7.7401, 125.871, 31.7401, 95.871, 31.7401, 95.871, 7.7401, 65.871, 7.7401, 65.871, 31.7401, 34.871, 31.7401)
+width = 2.0
+default_color = Color(0, 0, 0, 1)
 
 [node name="shoot_resource" type="Node2D" parent="."]
 position = Vector2(114, 593)
