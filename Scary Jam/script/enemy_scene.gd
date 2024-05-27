@@ -1,9 +1,10 @@
 extends CharacterBody2D
 class_name Enemy
 
-const SPEED = 9000
+var speed = 9000
 const HEART_RESOURCE = preload("res://scenes/heart_resource.tscn")
 @onready var animated_sprite_2d = $AnimatedSprite2D
+@onready var collision_shape_2d = $CollisionShape2D
 
 
 func _ready():
@@ -14,7 +15,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 func movement(delta) -> void:
-	velocity = position.direction_to(Global.player_node.global_position) * delta * SPEED
+	velocity = position.direction_to(Global.player_node.global_position) * delta * speed
 	animated_sprite_2d.flip_h = velocity.x < 0
 
 func _on_area_2d_body_entered(body):
@@ -28,5 +29,8 @@ func _on_area_2d_area_entered(area):
 		if randi_range(1, 3) == 1:
 			get_parent().get_parent().get_node("resources").add_child(heart)
 			heart.global_position = global_position
+		animated_sprite_2d.play("hurt")
+		speed = 0
 		area.queue_free()
+		await animated_sprite_2d.animation_finished
 		queue_free()
