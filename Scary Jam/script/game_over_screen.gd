@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 @onready var animation_player = $AnimationPlayer
-@onready var restart_button = $AnimationPlayer/restart_button
+@onready var restart_button: Button = $AnimationPlayer/restart_button
 @onready var game_over_message_label = $AnimationPlayer/game_over_message
 @export var message: String = "Você foi pego pelos Jammers"
 var game_over_check = false
@@ -9,13 +9,16 @@ var game_over_check = false
 
 func _ready():
 	hide()
+	restart_button.set_mouse_filter(Control.MOUSE_FILTER_IGNORE)
 
 func _process(delta):
 	set_label_message()
 	if Global.game_over:
 		show()
-		animation_player.play("game_over")
 		get_tree().paused = true
+		animation_player.play("game_over")
+		await get_tree().create_timer(2).timeout
+		restart_button.set_mouse_filter(Control.MOUSE_FILTER_STOP)
 		restart_button.grab_focus()
 
 func _on_restart_button_pressed():

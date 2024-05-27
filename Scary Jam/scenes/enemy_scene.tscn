@@ -1,41 +1,41 @@
 [gd_scene load_steps=9 format=3 uid="uid://dut6mmgcxxyas"]
 
 [ext_resource type="Script" path="res://script/enemy_scene.gd" id="1_negh7"]
-[ext_resource type="Texture2D" uid="uid://brq7ymwmrpeyj" path="res://assets/Slime.01-idle.png" id="2_s3efi"]
+[ext_resource type="Texture2D" uid="uid://dyghrmsfquahs" path="res://assets/necromancer_.png" id="2_xttwt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5462s"]
-size = Vector2(40, 40)
+size = Vector2(27, 40)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4xjfh"]
-atlas = ExtResource("2_s3efi")
-region = Rect2(0, 15, 48, 17)
+[sub_resource type="AtlasTexture" id="AtlasTexture_8krcu"]
+atlas = ExtResource("2_xttwt")
+region = Rect2(0, 0, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8wt3p"]
-atlas = ExtResource("2_s3efi")
-region = Rect2(48, 15, 48, 17)
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5fnb"]
+atlas = ExtResource("2_xttwt")
+region = Rect2(24, 0, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1lqjv"]
-atlas = ExtResource("2_s3efi")
-region = Rect2(96, 15, 48, 17)
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhuij"]
+atlas = ExtResource("2_xttwt")
+region = Rect2(48, 0, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nlr85"]
-atlas = ExtResource("2_s3efi")
-region = Rect2(144, 15, 48, 17)
+[sub_resource type="AtlasTexture" id="AtlasTexture_0gddg"]
+atlas = ExtResource("2_xttwt")
+region = Rect2(72, 0, 24, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hfd8k"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4xjfh")
+"texture": SubResource("AtlasTexture_8krcu")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8wt3p")
+"texture": SubResource("AtlasTexture_q5fnb")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1lqjv")
+"texture": SubResource("AtlasTexture_lhuij")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nlr85")
+"texture": SubResource("AtlasTexture_0gddg")
 }],
 "loop": true,
 "name": &"idle",
@@ -43,7 +43,6 @@ animations = [{
 }]
 
 [node name="enemy" type="CharacterBody2D"]
-disable_mode = 1
 motion_mode = 1
 script = ExtResource("1_negh7")
 
@@ -51,13 +50,15 @@ script = ExtResource("1_negh7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_5462s")
+one_way_collision_margin = 0.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -10)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_hfd8k")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.821113
+frame_progress = 0.20947
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

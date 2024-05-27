@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cuwvdickdojxe"]
+[gd_scene load_steps=12 format=3 uid="uid://cuwvdickdojxe"]
 
 [ext_resource type="Script" path="res://script/inventory.gd" id="1_y52ir"]
 [ext_resource type="Texture2D" uid="uid://b2mm1qi1tj3sh" path="res://assets/life_icon.png" id="2_36t2i"]
@@ -28,12 +28,6 @@ modulate_color = Color(1, 1, 1, 0.588235)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_by7sb"]
 texture = ExtResource("3_b58mw")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_impsa"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vcpvi"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ri3gi"]
 
 [node name="inventory" type="Control"]
 layout_mode = 3
@@ -122,21 +116,8 @@ text = "+Balas"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="quit_menu" type="Button" parent="Area2D/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 0.588235)
-theme_override_colors/font_pressed_color = Color(0.731274, 0.702113, 0.240797, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 15
-theme_override_styles/normal = SubResource("StyleBoxTexture_impsa")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_vcpvi")
-theme_override_styles/focus = SubResource("StyleBoxTexture_ri3gi")
-text = "voltar"
-
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="pressed" from="Area2D/VBoxContainer/HBoxContainer/plus_life" to="." method="_on_plus_life_pressed"]
 [connection signal="pressed" from="Area2D/VBoxContainer/HBoxContainer/plus_life" to="." method="_on_life_pressed"]
-[connection signal="pressed" from="Area2D/VBoxContainer/HBoxContainer/plus_shoot" to="." method="_on_plus_shoot_pressed"]
+[connection signal="pressed" from="Area2D/VBoxContainer/HBoxContainer/plus_life" to="." method="_on_plus_life_pressed"]
 [connection signal="pressed" from="Area2D/VBoxContainer/HBoxContainer/plus_shoot" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Area2D/VBoxContainer/quit_menu" to="." method="_on_quit_menu_pressed"]
-[connection signal="pressed" from="Area2D/VBoxContainer/quit_menu" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Area2D/VBoxContainer/HBoxContainer/plus_shoot" to="." method="_on_plus_shoot_pressed"]

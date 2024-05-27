@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://deejpf5pimjup"
-path="res://.godot/imported/carinha.png-178552af533fc7b3845ad1a5899cf60a.ctex"
+uid="uid://dyghrmsfquahs"
+path="res://.godot/imported/necromancer_.png-8b9bd38edb4d97f498331f491cfb756c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/carinha.png"
-dest_files=["res://.godot/imported/carinha.png-178552af533fc7b3845ad1a5899cf60a.ctex"]
+source_file="res://assets/necromancer_.png"
+dest_files=["res://.godot/imported/necromancer_.png-8b9bd38edb4d97f498331f491cfb756c.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://41io85ilblws"
-path="res://.godot/imported/heart.png-9a2fa56e49d8a002fed7c28ce07513e0.ctex"
+uid="uid://dawkn5dsjblm1"
+path="res://.godot/imported/tree_tilemap.png-bfde010db2b25566387b8e641eee0363.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/heart.png"
-dest_files=["res://.godot/imported/heart.png-9a2fa56e49d8a002fed7c28ce07513e0.ctex"]
+source_file="res://assets/tree_tilemap.png"
+dest_files=["res://.godot/imported/tree_tilemap.png-bfde010db2b25566387b8e641eee0363.ctex"]
 
 [params]
 

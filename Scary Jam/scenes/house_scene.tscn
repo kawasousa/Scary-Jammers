@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ckoxx85jctqna"]
+[gd_scene load_steps=11 format=3 uid="uid://ckoxx85jctqna"]
 
 [ext_resource type="Script" path="res://script/house.gd" id="1_781us"]
 [ext_resource type="PackedScene" uid="uid://dy5vyatq360dc" path="res://scenes/pause_menu.tscn" id="1_viooo"]
@@ -8,10 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://nsbwhtdjwvqp" path="res://assets/stick.png" id="3_dalu6"]
 [ext_resource type="Texture2D" uid="uid://c3lrqlwc65vgy" path="res://assets/gun.png" id="4_75172"]
 [ext_resource type="Texture2D" uid="uid://b2mm1qi1tj3sh" path="res://assets/life_icon.png" id="5_pgasn"]
-[ext_resource type="Texture2D" uid="uid://deejpf5pimjup" path="res://assets/carinha.png" id="6_1rode"]
 [ext_resource type="PackedScene" uid="uid://btm5fg74xn1qh" path="res://scenes/game_over_screen.tscn" id="6_s5mbg"]
 [ext_resource type="PackedScene" uid="uid://cuwvdickdojxe" path="res://scenes/inventory.tscn" id="7_rk743"]
-[ext_resource type="Texture2D" uid="uid://41io85ilblws" path="res://assets/heart.png" id="7_x8lxv"]
 
 [node name="house" type="Node2D"]
 script = ExtResource("1_781us")
@@ -130,17 +128,6 @@ texture = ExtResource("5_pgasn")
 position = Vector2(503, 276.75)
 scale = Vector2(0.4375, 0.435484)
 texture = ExtResource("5_pgasn")
-
-[node name="Carinha" type="Sprite2D" parent="scenario_placeholder/table_scenario"]
-position = Vector2(454, 164)
-rotation = 0.359538
-scale = Vector2(0.375001, 0.375)
-texture = ExtResource("6_1rode")
-
-[node name="Heart" type="Sprite2D" parent="scenario_placeholder/table_scenario"]
-position = Vector2(714, 217)
-rotation = -0.174533
-texture = ExtResource("7_x8lxv")
 
 [node name="Stick6" type="Sprite2D" parent="scenario_placeholder/table_scenario"]
 position = Vector2(518, 181)
