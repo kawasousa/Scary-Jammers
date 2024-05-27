@@ -5,11 +5,10 @@ const ENEMY_SCENE = preload("res://scenes/enemy_scene.tscn")
 var game_over: bool = false
 var game_win: bool = false
 var max_game_days: int = 5
-var game_day: int
+var game_day: int 
 var game_seconds: int
 var game_minutes: int
 var game_match_minutes: int = 1
-var can_start_invasion_timer: bool = false
 var enemy_node
 var house_scene_node
 var outdoor_scene_node
@@ -21,6 +20,7 @@ var player_shooots: int
 var player_life: int
 var player_shoot_resource: int
 var player_life_resource: int
+var can_start_invasion_timer: bool = false
 var can_spawn_enemies: bool = false
 var can_spawn_shoot_resources: bool = true
 

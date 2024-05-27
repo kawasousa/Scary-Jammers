@@ -44,6 +44,7 @@ func movement(delta) -> void:
 func shoot() -> void:
 	## tiros sendo adicionados através da criação de nós filhos 
 	if Input.is_action_just_pressed("shoot") and get_parent().name == "outdoor_scene" and Global.player_shooots > 0:
+		Input.set_custom_mouse_cursor(load("res://assets/UI_Flat_Select_02a3.png"))
 		var shoot_instance = SHOOT_SCENE.instantiate()
 		get_parent().get_node("shoot_group").add_child(shoot_instance)
 		shoot_instance.global_position = global_position
