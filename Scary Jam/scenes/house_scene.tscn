@@ -17,7 +17,7 @@ script = ExtResource("1_781us")
 [node name="passage_area" parent="." instance=ExtResource("2_nqlps")]
 position = Vector2(378, 635)
 target_area = "res://scenes/outdoor_scene.tscn"
-player_position = Vector2(250, 335)
+player_position = Vector2(220, 340)
 
 [node name="scenario_placeholder" type="Node2D" parent="."]
 
@@ -166,7 +166,6 @@ offset_bottom = 648.0
 color = Color(0.301961, 0.219608, 0.172549, 0.996078)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="scenario_placeholder"]
-visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="scenario_placeholder/StaticBody2D"]
 polygon = PackedVector2Array(304, 648, 305, 630, 88, 632, 88, 449, 322, 450, 320, 384, 102, 383, 105, 279, 169, 279, 169, 17, 1113, 19, 1111, 95, 1040, 99, 1039, 273, 1109, 272, 1110, 382, 445, 383, 447, 449, 1060, 449, 1060, 631, 466, 630, 467, 646, 1155, 648, 1149, -2, 2, 1, -2, 647)

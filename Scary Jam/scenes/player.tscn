@@ -144,6 +144,8 @@ size = Vector2(64, 64)
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 position = Vector2(576, 324)
+collision_layer = 5
+collision_mask = 5
 motion_mode = 1
 script = ExtResource("1_82tuw")
 

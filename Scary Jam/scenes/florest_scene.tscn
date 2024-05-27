@@ -328,12 +328,6 @@ sources/0 = SubResource("TileSetAtlasSource_d5d7h")
 [node name="florest" type="Node2D"]
 script = ExtResource("1_bq1m7")
 
-[node name="passage_area" parent="." instance=ExtResource("2_1ddcw")]
-position = Vector2(164, 8)
-scale = Vector2(3, 3)
-target_area = "res://scenes/outdoor_scene.tscn"
-player_position = Vector2(255, 575)
-
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_v5085")
@@ -345,19 +339,19 @@ layer_1/tile_data = PackedInt32Array(33, 0, 6, 65569, 0, 7, 131105, 0, 8, 34, 65
 layer_2/name = "front"
 layer_2/tile_data = PackedInt32Array(34, 0, 5, 65570, 0, 6, 131106, 0, 7, 35, 65536, 5, 65571, 65536, 6, 131107, 65536, 7, 262178, 0, 5, 327714, 0, 6, 393250, 0, 7, 262179, 65536, 5, 327715, 65536, 6, 393251, 65536, 7, 589858, 0, 6, 655394, 0, 7, 589859, 65536, 6, 655395, 65536, 7, 786466, 0, 5, 852002, 0, 6, 917538, 0, 7, 786467, 65536, 5, 852003, 65536, 6, 917539, 65536, 7, 1245218, 131072, 5, 1048611, 65536, 5, 1114147, 65536, 6, 1179683, 65536, 7, 1245186, 0, 5, 1245187, 65536, 5, 1245188, 131072, 5, 1245189, 0, 5, 1245190, 65536, 5, 1245191, 131072, 5, 1245192, 0, 5, 1245193, 65536, 5, 1245194, 131072, 5, 1245195, 0, 5, 1245196, 65536, 5, 1245197, 131072, 5, 1245198, 0, 5, 1245199, 65536, 5, 1245200, 131072, 5, 1245201, 0, 5, 1245202, 65536, 5, 1245203, 131072, 5, 1245204, 0, 5, 1245205, 65536, 5, 1245206, 131072, 5, 1245207, 0, 5, 1245208, 65536, 5, 1245209, 131072, 5, 1245210, 0, 5, 1245211, 65536, 5, 1245212, 131072, 5, 1245213, 0, 5, 1245214, 65536, 5, 1245215, 131072, 5, 1245216, 0, 5, 1245217, 65536, 5, 9, 0, 6, 65545, 0, 7, 131081, 0, 8, 10, 65536, 6, 65546, 65536, 7, 131082, 65536, 8, 11, 131072, 6, 65547, 131072, 7, 131083, 131072, 8, 12, 0, 6, 65548, 0, 7, 131084, 0, 8, 13, 65536, 6, 65549, 65536, 7, 131085, 65536, 8, 14, 131072, 6, 65550, 131072, 7, 131086, 131072, 8, 15, 0, 6, 65551, 0, 7, 131087, 0, 8, 16, 65536, 6, 65552, 65536, 7, 131088, 65536, 8, 17, 131072, 6, 65553, 131072, 7, 131089, 131072, 8, 18, 0, 6, 65554, 0, 7, 131090, 0, 8, 19, 65536, 6, 65555, 65536, 7, 131091, 65536, 8, 20, 131072, 6, 65556, 131072, 7, 131092, 131072, 8, 21, 0, 6, 65557, 0, 7, 131093, 0, 8, 22, 65536, 6, 65558, 65536, 7, 131094, 65536, 8, 23, 131072, 6, 65559, 131072, 7, 131095, 131072, 8, 24, 0, 6, 65560, 0, 7, 131096, 0, 8, 25, 65536, 6, 65561, 65536, 7, 131097, 65536, 8, 26, 131072, 6, 65562, 131072, 7, 131098, 131072, 8, 27, 0, 6, 65563, 0, 7, 131099, 0, 8, 28, 65536, 6, 65564, 65536, 7, 131100, 65536, 8, 29, 131072, 6, 65565, 131072, 7, 131101, 131072, 8, 30, 0, 6, 65566, 0, 7, 131102, 0, 8, 31, 65536, 6, 65567, 65536, 7, 131103, 65536, 8, 32, 131072, 6, 65568, 131072, 7, 131104, 131072, 8, 1048610, 0, 5, 1114146, 0, 6, 1179682, 0, 7, 1245219, 0, 5, 524322, 0, 5, 524323, 65536, 5, 1245184, 65536, 5, 1245185, 131072, 5)
 
+[node name="passage_area" parent="TileMap" instance=ExtResource("2_1ddcw")]
+position = Vector2(86, 15)
+scale = Vector2(1.71829, 2.52895)
+target_area = "res://scenes/outdoor_scene.tscn"
+player_position = Vector2(255, 575)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TileMap"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap/StaticBody2D"]
+polygon = PackedVector2Array(18, 0, 14, 308, 559, 313.5, 557, 26, 157.5, 29.5, 157.5, -1, 577.5, -1, 575, 321, -1, 322, 1.5, 1)
+
 [node name="Player" parent="." instance=ExtResource("1_hkoe8")]
-position = Vector2(160, 85)
-
-[node name="canvas" type="Node2D" parent="."]
-
-[node name="HUD" parent="canvas" instance=ExtResource("3_e0pml")]
-visible = false
-
-[node name="pause_menu" parent="canvas" instance=ExtResource("4_ema30")]
-visible = false
-
-[node name="game_over_screen" parent="canvas" instance=ExtResource("6_3gcfr")]
-visible = false
+position = Vector2(160, 128)
 
 [node name="tree_spawn_markers" type="Node2D" parent="."]
 
@@ -399,5 +393,19 @@ position = Vector2(128, 440)
 
 [node name="tree_group" type="Node2D" parent="."]
 
+[node name="Canvas" type="Node2D" parent="."]
+
+[node name="HUD" parent="Canvas" instance=ExtResource("3_e0pml")]
+
+[node name="pause_menu" parent="Canvas" instance=ExtResource("4_ema30")]
+visible = false
+
+[node name="game_over_screen" parent="Canvas" instance=ExtResource("6_3gcfr")]
+
+[node name="filter_rect" type="ColorRect" parent="Canvas"]
+offset_right = 1152.0
+offset_bottom = 640.0
+color = Color(0.054902, 0.0352941, 0.160784, 0.529412)
+
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
-[connection signal="body_entered" from="passage_area" to="." method="_on_passage_area_body_entered"]
+[connection signal="body_entered" from="TileMap/passage_area" to="." method="_on_passage_area_body_entered"]
