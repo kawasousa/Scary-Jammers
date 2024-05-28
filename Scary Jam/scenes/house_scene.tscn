@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ckoxx85jctqna"]
+[gd_scene load_steps=19 format=3 uid="uid://ckoxx85jctqna"]
 
 [ext_resource type="Script" path="res://script/house.gd" id="1_781us"]
 [ext_resource type="PackedScene" uid="uid://dy5vyatq360dc" path="res://scenes/pause_menu.tscn" id="1_viooo"]
@@ -228,6 +228,30 @@ texture = ExtResource("3_cttek")
 [sub_resource type="TileSet" id="TileSet_ldprc"]
 sources/0 = SubResource("TileSetAtlasSource_cok8v")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vrcdy"]
+size = Vector2(67, 649)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1pggu"]
+size = Vector2(322, 69)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hewtg"]
+size = Vector2(1149, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2xuvl"]
+size = Vector2(702.75, 69)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_quu8m"]
+size = Vector2(61.5, 649)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a7epn"]
+size = Vector2(107, 79)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0dnjk"]
+size = Vector2(27, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_31sin"]
+size = Vector2(36, 42)
+
 [node name="house" type="Node2D"]
 script = ExtResource("1_781us")
 
@@ -251,6 +275,7 @@ layer_2/tile_data = PackedInt32Array(131081, 0, 9, 196617, 0, 10, 196618, 65536,
 offset_right = 288.0
 offset_bottom = 162.0
 color = Color(0.054902, 0.0352941, 0.160784, 0.529412)
+metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_cnpi6")]
 position = Vector2(385, 540)
@@ -273,6 +298,41 @@ offset_top = 200.0
 offset_right = 640.0
 offset_bottom = 200.0
 scale = Vector2(0.733521, 0.944238)
+metadata/_edit_use_anchors_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(31.5, 321.5)
+shape = SubResource("RectangleShape2D_vrcdy")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(158, 611.5)
+shape = SubResource("RectangleShape2D_1pggu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(577, 24)
+shape = SubResource("RectangleShape2D_hewtg")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(799.625, 613.5)
+shape = SubResource("RectangleShape2D_2xuvl")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1119.25, 325)
+shape = SubResource("RectangleShape2D_quu8m")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(641, 186.5)
+shape = SubResource("RectangleShape2D_a7epn")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(740.5, 158.5)
+shape = SubResource("RectangleShape2D_0dnjk")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(987, 547)
+shape = SubResource("RectangleShape2D_31sin")
 
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
 [connection signal="body_entered" from="passage_area" to="." method="_on_passage_area_body_entered"]
