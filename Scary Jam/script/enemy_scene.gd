@@ -25,12 +25,12 @@ func _on_area_2d_body_entered(body):
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("shoots"):
-		var heart = HEART_RESOURCE.instantiate()
-		if randi_range(1, 3) == 1:
-			get_parent().get_parent().get_node("resources").add_child(heart)
-			heart.global_position = global_position
 		animated_sprite_2d.play("hurt")
 		speed = 0
 		area.queue_free()
 		await animated_sprite_2d.animation_finished
+		var heart = HEART_RESOURCE.instantiate()
+		if randi_range(1, 3) == 1:
+			get_parent().get_parent().get_node("resources").add_child(heart)
+			heart.global_position = global_position
 		queue_free()
