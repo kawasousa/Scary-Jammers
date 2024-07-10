@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var game_over_message_label = $AnimationPlayer/game_over_message
 @export var message: String = "Você foi pego pelos Jammers"
 var game_over_check = false
+var playerDeadCheck: bool = false
 
 
 func _ready():
@@ -13,7 +14,7 @@ func _ready():
 
 func _process(delta):
 	set_label_message()
-	if Global.game_over:
+	if Global.game_over and Global.isPlayerDied:
 		show()
 		get_parent().get_node("pause_menu").hide()
 		get_tree().paused = true

@@ -1,9 +1,11 @@
 extends CharacterBody2D
+class_name Player
 
 @onready var sprite = $sprite
 @export var speed = 20000
 const SHOOT_SCENE = preload("res://scenes/shoot_scene.tscn")
 var can_move = true
+@onready var camera = $Camera2D
 
 
 func _ready():
@@ -16,6 +18,11 @@ func _physics_process(delta):
 	else:
 		velocity = Vector2(0,0)
 	shoot()
+	if Global.game_over:
+		can_move = false
+		sprite.play("death")
+		await sprite.animation_finished
+		Global.isPlayerDied = true
 	move_and_slide()
 
 ## Movimentação do jogador
@@ -53,5 +60,7 @@ func shoot() -> void:
 			shoot_instance.look_at(get_global_mouse_position())
 			shoot_instance.add_to_group("shoots")
 			Global.player_shooots -= 1
+			camera.offset = Vector2(randi_range(0,10), randi_range(0,10))
 		await  get_tree().create_timer(0.05).timeout
 		Input.set_custom_mouse_cursor(load("res://assets/UI_Flat_Select_02a1.png"))
+		camera.offset = Vector2(0,0)

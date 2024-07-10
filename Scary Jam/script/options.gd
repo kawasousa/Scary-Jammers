@@ -12,3 +12,6 @@ func _on_quit_button_pressed():
 
 func _on_days_button_item_selected(index):
 	Global.max_game_days = index + 1
+
+func _on_fullscreeen_pressed():
+	Global.toggleFullscreenMode()

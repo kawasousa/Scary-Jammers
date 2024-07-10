@@ -1,17 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cximw1n7ocfqt"]
+[gd_scene load_steps=3 format=3 uid="uid://cximw1n7ocfqt"]
 
 [ext_resource type="Script" path="res://script/options.gd" id="1_cwab2"]
+[ext_resource type="Texture2D" uid="uid://0ll586uvek3n" path="res://assets/startScreen.png" id="2_qdyeo"]
 
-[sub_resource type="Gradient" id="Gradient_o4td1"]
-colors = PackedColorArray(0.17435, 0.174346, 0.195286, 1, 0.234, 0.234, 0.26, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_sb0js"]
-gradient = SubResource("Gradient_o4td1")
-fill_from = Vector2(0.5, 1)
-fill_to = Vector2(0.5, 0)
-metadata/_snap_enabled = true
-
-[node name="optiond" type="Control"]
+[node name="options" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,13 +13,14 @@ grow_vertical = 2
 script = ExtResource("1_cwab2")
 
 [node name="background" type="TextureRect" parent="."]
+self_modulate = Color(0.313726, 0.313726, 0.313726, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("GradientTexture2D_sb0js")
+texture = ExtResource("2_qdyeo")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -76,6 +69,10 @@ popup/item_6/id = 6
 layout_mode = 2
 text = "voltar ao menu inicial"
 
+[node name="fullscreeen" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+text = "Tela Cheia"
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_left = 263.0
@@ -89,3 +86,4 @@ vertical_alignment = 1
 
 [connection signal="item_selected" from="VBoxContainer2/HBoxContainer/days_button" to="." method="_on_days_button_item_selected"]
 [connection signal="pressed" from="VBoxContainer2/quit_button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="VBoxContainer2/fullscreeen" to="." method="_on_fullscreeen_pressed"]

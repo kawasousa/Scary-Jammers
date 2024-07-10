@@ -4,13 +4,15 @@ class_name Enemy
 var speed = 9000
 const HEART_RESOURCE = preload("res://scenes/heart_resource.tscn")
 @onready var animated_sprite_2d = $AnimatedSprite2D
-@onready var collision_shape_2d = $CollisionShape2D
+@onready var collision = $Area2D/CollisionShape2D
+@onready var collisionShape = $CollisionShape2D
 
 
 func _ready():
 	Global.enemy_node = self
 
 func _physics_process(delta):
+	if Global.game_over: speed = 0
 	movement(delta)
 	move_and_slide()
 
@@ -25,6 +27,8 @@ func _on_area_2d_body_entered(body):
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("shoots"):
+		collision.queue_free()
+		collisionShape.queue_free()
 		animated_sprite_2d.play("hurt")
 		speed = 0
 		area.queue_free()

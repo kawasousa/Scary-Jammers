@@ -10,9 +10,12 @@ config_version=5
 
 [application]
 
-config/name="Scary Jam"
+config/name="Scary Jammers"
 run/main_scene="res://scenes/menu_inicial.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/image="res://assets/logo/Labiras_Logo.png"
+boot_splash/fullsize=false
 
 [autoload]
 
@@ -21,8 +24,12 @@ ItemData="*res://Autoload/itens_database.gd"
 
 [display]
 
-window/size/mode=2
+window/size/mode=3
+window/size/resizable=false
 window/stretch/mode="viewport"
+window/fullsize=true
+window/bg_color=Color(0.14, 0.14, 0.14, 1)
+window/image=""
 
 [gui]
 

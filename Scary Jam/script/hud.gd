@@ -41,6 +41,9 @@ func update_life_resource_label() -> void:
 func show_invasion_label() -> void:
 	if Global.can_start_invasion_timer:
 		invasion.visible = true
+		var greenColor = 1.2 - Global.invasion_rect_factor / 400
+		invasion_rect.color = Color(1,greenColor,0)
+		invasion_alert_polygon.color = Color(1,greenColor,0)
 	else:
 		invasion.visible = false
 

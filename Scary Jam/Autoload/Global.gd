@@ -1,5 +1,6 @@
 extends Node
 
+
 const ENEMY_SCENE = preload("res://scenes/enemy_scene.tscn")
 @onready var timer: Timer = $Timer
 var game_over: bool = false
@@ -23,6 +24,8 @@ var player_life_resource: int
 var can_start_invasion_timer: bool = false
 var can_spawn_enemies: bool = false
 var can_spawn_shoot_resources: bool = true
+var isPlayerDied: bool = false
+var isFullscreen: bool = true
 
 ################################################################################
 
@@ -37,6 +40,8 @@ func _process(_delta):
 	get_bullet()
 	spawn_enemy()
 	check_player_life()
+	clampPlayerResources()
+	setFullscreenMode()
 
 ## Obtém as balas e limita ela a no mínimo 0 e no máximo 100
 func get_bullet() -> int:
@@ -52,7 +57,7 @@ func update_bullets(update_factor) -> int:
 	return player_shooots
 
 func set_invasion_timer() -> void:
-	if can_start_invasion_timer:
+	if can_start_invasion_timer and not game_over:
 		invasion_rect_factor += 0.5
 		if invasion_rect_factor >= 400:
 			invasion_rect_factor = 0
@@ -79,7 +84,6 @@ func check_player_life() -> void:
 	## checando vida do player e transformando a condição de game over em verdadeira
 	if player_life == 0:
 		game_over = true
-		can_spawn_enemies = false
 	player_life = min(player_life, 5)
 	player_life = max(player_life, 0)
 
@@ -113,3 +117,28 @@ func _on_timer_timeout():
 func day_to_win() -> void:
 	if game_day == 0:
 		game_win = true
+
+func clampPlayerResources() -> void:
+	player_life_resource = max(player_life_resource, 0)
+	player_shoot_resource = max(player_shoot_resource, 0)
+
+func tradeLife() -> void:
+	if player_life_resource > 0:
+		player_life += 1
+		player_life_resource -= 1
+
+func tradeShoot() -> void:
+	if player_shoot_resource > 0:
+		player_shooots += 1
+		player_shoot_resource -= 1
+
+func toggleFullscreenMode() -> void:
+	isFullscreen = not isFullscreen
+
+func setFullscreenMode() -> void:
+	if isFullscreen:
+		get_window().set_mode(Window.MODE_FULLSCREEN)
+	else:
+		get_window().set_mode(Window.MODE_WINDOWED)
+		get_window().size = Vector2(1152, 648)
+		get_window().move_to_center()

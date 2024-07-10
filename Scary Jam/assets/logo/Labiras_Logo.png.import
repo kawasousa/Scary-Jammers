@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdjwkgb3ha7mt"
-path="res://.godot/imported/tree.png-bf64094b89302dd1be83aa5edf9988ef.ctex"
+uid="uid://c6guj88ejuws2"
+path="res://.godot/imported/Labiras_Logo.png-85952c964cd09650ebcfe738fc5aa0ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tree.png"
-dest_files=["res://.godot/imported/tree.png-bf64094b89302dd1be83aa5edf9988ef.ctex"]
+source_file="res://assets/logo/Labiras_Logo.png"
+dest_files=["res://.godot/imported/Labiras_Logo.png-85952c964cd09650ebcfe738fc5aa0ae.ctex"]
 
 [params]
 
